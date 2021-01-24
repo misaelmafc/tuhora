@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Tu Hora</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="js/navigation.js"></script>
+    <script src="js/user.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/rg.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top nav-container">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img class="nav-container__logo" src="assets/logo.jpg">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item  p-2">
+                        <a class="nav-link body__button-a" id="btn-reservation-availability" href="#">Disponibilidad
+                            clínica</a>
+                    </li>
+                    <li class="nav-item  p-2">
+                        <a class="nav-link body__button-a" id="btn-reservation-doctor" href="#">Búsqueda de
+                            profesional</a>
+                    </li>
+                    <li class="nav-item  p-2">
+                        <a class="nav-link body__button-a" id="btn-register" href="#">Registrarse</a>
+                    </li>
+                    <li class="nav-item  p-2">
+                        <a class="nav-link body__button-a" id="btn-login" href="#">Iniciar sesión</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-container container-fluid">
+
+        <div class="main-container-row row align-items-center">
+
+            <div style="display: block;" id="div-login" class="col-sm-8 col-xl-6 container main-container-div">
+                <div class="row align-items-center justify-content-center main-container-div-initial">
+                    <form id="formLogin" class="col-md-9 col-lg-6 main-container-div-initial-form-login"
+                        action="user.html">
+
+                        <div class="form-row">
+
+                            <h3 class="col-md-12 col-lg-9 offset-lg-3 main-container-div-form__h3">Iniciar sesión</h3>
+
+                            <div class="form-group col-md-12 col-lg-9 offset-lg-3">
+                                <label for="inputEmail">Email</label>
+                                <input id="input-username" type="email" class="form-control" id="inputEmail"
+                                    name="inputEmail" placeholder="Email personal">
+                            </div>
+
+                            <div class="w-100 d-none d-lg-block"></div>
+                            <div class="form-group col-sm-12 col-lg-9 offset-lg-3">
+                                <label for="inputPassword">Contraseña</label>
+                                <input id="input-password" type="password" class="form-control" id="inputPassword"
+                                    name="inputPassword" placeholder="Contraseña registrada">
+                            </div>
+                            <div class="w-100 d-none d-lg-block"></div>
+
+                            <button id="btn-login-console" type="button"
+                                class="col-md-12 col-lg-9 offset-lg-3 main-container-form__btn">Iniciar
+                                sesión</button>
+                        </div>
+
+                    </form>
+                    <div class="offset-lg-1 col-md-9 col-lg-5 align-items-center main-container-div-initial-banner">
+                        <h3 class="main-container-div-initial-banner__txt">Tu salud nos importa</h3>
+                        <h3 class="main-container-div-initial-banner__txt">Reserva con nosotros</h3>
+                        <a href="" class="body__button-a main-container-div-initial-banner__a">Reserva
+                            aquí</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="div-register" class="container main-container-div">
+
+                <form class="main-container-div-form" method="post">
+
+                    <h3 class="main-container-div-form__h3">Registro</h3>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputNumberIdentification">N° Identificación</label>
+                            <input id="rg_input1" type="text" class="form-control" name="inputNumberIdentification"
+                                placeholder="Número de RUN / DNI" required>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputName">Nombre</label>
+                            <input id="rg_input2" type="text" class="form-control" name="inputName"
+                                placeholder="Primer nombre" required>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputLastames">Apellidos</label>
+                            <input id="rg_input3" type="text" class="form-control" name="inputLastames"
+                                placeholder="Apellido paterno y materno" required>
+                        </div>
+
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputBirthDate">Fecha de nacimiento</label>
+                            <input id="rg_input4" type="date" class="form-control" name="inputBirthDate"
+                                placeholder="Fecha de nacimiento" required>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputNacionality">Sexo</label>
+                            <select id="rg_input5" type="text" class="form-control" name="inputNacionality"
+                                placeholder="Sexo" required>
+                                <option selected disabled value="">Seleccione</option>
+                                <option value="Mujer">Mujer</option>
+                                <option value="Hombre">Hombre</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputNacionality">Nacionalidad</label>
+                            <select id="rg_input6" type="text" class="form-control" name="inputNacionality"
+                                placeholder="Sexo" required>
+                                <option selected disabled value="">Seleccione</option>
+                                <option value="Chile">Chile</option>
+                                <option value="Argentina">Argentina</option>
+                                <option value="Colombia">Colombia</option>
+                                <option value="Ecuador">Ecuador</option>
+                                <option value="Venezuela">Venezuela</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputEmail">Email</label>
+                            <input id="rg_input7" type="email" class="form-control" name="inputEmail"
+                                placeholder="Email personal" required>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputPhone">Teléfono</label>
+                            <input id="rg_input8" type="number" class="form-control" name="inputEmail"
+                                placeholder="+56 9 1234 5678" required>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputNacionality">Previsión</label>
+                            <select id="rg_input9" type="text" class="form-control" name="inputNacionality"
+                                placeholder="Previsión" required>
+                                <option selected disabled value="">Seleccione</option>
+                                <option value="Fonasa">Fonasa</option>
+                                <option value="Isapre">Isapre</option>
+                                <option value="Sin previsión">Sin previsión</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputPassword">Contraseña</label>
+                            <input id="rg_input10" type="password" class="form-control" name="inputPassword"
+                                placeholder="Mínimo 8 caracteres" required>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputValidatePassword">Confirmar contraseña</label>
+                            <input id="rg_input11" type="password" class="form-control" name="inputValidatePassword"
+                                placeholder="Repetir contraseña" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check-one">
+                            <label class="form-check-label" for="check-one">Acepto los términos y condiciones</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="col-md-6 col-lg-4 main-container-form__btn">Registrarse</button>
+                </form>
+            </div>
+
+            <div id="div-reservation-availability" class="container main-container-div">
+
+                <form class="main-container-div-form" method="post">
+
+                    <h3 class="main-container-div-form__h3">Disponibilidad clínica</h3>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputNacionality">Centro de salud</label>
+                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
+                                required>
+                                <option selected value="clinica1">Clínica uno</option>
+                                <option value="clinica2">Clínica dos</option>
+                                <option value="clinica3">Clínica tres</option>
+                                <option value="clinica4">Clínica cuatro</option>
+                                <option value="clinica5">Clínica seis</option>
+                                <option value="clinica6">Clínica siete</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputNacionality">Especialidad</label>
+                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
+                                required>
+                                <option selected value="option1">Medicina general</option>
+                                <option value="option2">Cardiología</option>
+                                <option value="option3">Dermatología</option>
+                                <option value="option3">Gastroenterología</option>
+                                <option value="option4">Ginegología y Obstetricia.</option>
+                                <option value="option5">Pediatría</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputBirthDate">Fecha de reserva</label>
+                            <input type="date" class="form-control" name="inputBirthDate"
+                                placeholder="Fecha de nacimiento" required>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputNacionality">Médico</label>
+                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
+                                required>
+                                <option selected value="doctor1">Doctora 1</option>
+                                <option value="doctor2">Doctor 2</option>
+                                <option value="doctor3">Doctora 3</option>
+                                <option value="doctor4">Doctor 4</option>
+                                <option value="doctor5">Doctora 5</option>
+                                <option value="doctor6">Doctor 6</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputNacionality">Horario disponible</label>
+                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality"
+                                placeholder="Nacionalidad" required>
+                                <option selected value="horario1">Horario 1</option>
+                                <option value="horario2">Horario 2</option>
+                                <option value="horario3">Horario 3</option>
+                                <option value="horario4">Horario 4</option>
+                                <option value="horario5">Horario 5</option>
+                                <option value="horario5">Horario 6</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check-two">
+                            <label class="form-check-label" for="check-two">Acepto los términos y condiciones</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="col-md-6 col-lg-4 main-container-form__btn">Reservar</button>
+                </form>
+            </div>
+
+            <div id="div-reservation-doctor" class="container main-container-div">
+
+                <form class="main-container-div-form" method="post">
+
+                    <h3 class="main-container-div-form__h3">Búsqueda de profesional</h3>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputNacionality">Médico</label>
+                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
+                                required>
+                                <option selected value="doctor1">Doctora 1</option>
+                                <option value="doctor2">Doctor 2</option>
+                                <option value="doctor3">Doctora 3</option>
+                                <option value="doctor4">Doctor 4</option>
+                                <option value="doctor5">Doctora 5</option>
+                                <option value="doctor6">Doctor 6</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputNacionality">Especialidad</label>
+                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
+                                required>
+                                <option selected value="option1">Medicina general</option>
+                                <option value="option2">Cardiología</option>
+                                <option value="option3">Dermatología</option>
+                                <option value="option3">Gastroenterología</option>
+                                <option value="option4">Ginegología y Obstetricia.</option>
+                                <option value="option5">Pediatría</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputBirthDate">Fecha de reserva</label>
+                            <input type="date" class="form-control" name="inputBirthDate"
+                                placeholder="Fecha de nacimiento" required>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputNacionality">Horario disponible</label>
+                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
+                                required>
+                                <option selected value="horario1">Horario 1</option>
+                                <option value="horario2">Horario 2</option>
+                                <option value="horario3">Horario 3</option>
+                                <option value="horario4">Horario 4</option>
+                                <option value="horario5">Horario 5</option>
+                                <option value="horario5">Horario 6</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="inputNacionality">Centro de salud</label>
+                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
+                                required>
+                                <option selected value="clinica1">Clínica uno</option>
+                                <option value="clinica2">Clínica dos</option>
+                                <option value="clinica3">Clínica tres</option>
+                                <option value="clinica4">Clínica cuatro</option>
+                                <option value="clinica5">Clínica seis</option>
+                                <option value="clinica6">Clínica siete</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="check-three">
+                            <label class="form-check-label" for="check-three">Acepto los términos y condiciones</label>
+                        </div>
+                    </div>
+                    <button type="submit" class="col-md-6 col-lg-4 main-container-form__btn">Reservar</button>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer-container">
+        <div class="container footer-container-div">
+            <div class="row justify-content-center">
+                <div class="container col-md-7 footer-container-div-row">
+                    <h5 class="footer-container-div-row__h5">Ubicaciones</h5>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h6>Clínica Uno</h6>
+                            <p>Av. Lorem Ipsum 1234</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Clínica Dos</h6>
+                            <p>Av. Lorem Ipsum 1234</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Clínica Tres</h6>
+                            <p>Av. Lorem Ipsum 1234</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Clínica Cuatro</h6>
+                            <p>Av. Lorem Ipsum 1234</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Clínica Cinco</h6>
+                            <p>Av. Lorem Ipsum 1234</p>
+                        </div>
+                        <div class="col-md-6">
+                            <h6>Clínica Seis</h6>
+                            <p>Av. Lorem Ipsum 1234</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="container col-md-4 footer-container-div-row">
+                    <h5 class="footer-container-div-row__h5">Redes Sociales</h5>
+                    <div class="row">
+                        <div class="footer-container-div-row-rs col-2">
+                            <a href="">
+                                <img class="footer-container-div-row-rs__icon" src="assets/facebook.png" alt="">
+                            </a>
+                        </div>
+                        <div class="footer-container-div-row-rs col-2">
+                            <a href="">
+                                <img class="footer-container-div-row-rs__icon" src="assets/twitter.png" alt="">
+                            </a>
+                        </div>
+                        <div class="footer-container-div-row-rs col-2">
+                            <a href="">
+                                <img class="footer-container-div-row-rs__icon" src="assets/instagram.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="footer-container-div-row-rs col-2">
+                            <a href="">
+                                <img class="footer-container-div-row-rs__icon" src="assets/youtube.png" alt="">
+                            </a>
+                        </div>
+                        <div class="footer-container-div-row-rs col-2">
+                            <a href="">
+                                <img class="footer-container-div-row-rs__icon" src="assets/linkedin.png" alt="">
+                            </a>
+                        </div>
+                        <div class="footer-container-div-row-rs col-2">
+                            <a href="">
+                                <img class="footer-container-div-row-rs__icon" src="assets/tiktok.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
