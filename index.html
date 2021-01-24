@@ -10,10 +10,12 @@
         integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/user.js"></script>
     <script src="js/login.js"></script>
     <script src="js/rg.js"></script>
+    <script src="js/save-user.js"></script>
 </head>
 
 <body>
@@ -52,7 +54,7 @@
 
         <div class="main-container-row row align-items-center">
 
-            <div style="display: block;" id="div-login" class="col-sm-8 col-xl-6 container main-container-div">
+            <div id="div-login" class="col-sm-8 col-xl-6 container main-container-div">
                 <div class="row align-items-center justify-content-center main-container-div-initial">
                     <form id="formLogin" class="col-md-9 col-lg-6 main-container-div-initial-form-login"
                         action="user.html">
@@ -90,47 +92,66 @@
                 </div>
             </div>
 
-            <div id="div-register" class="container main-container-div">
+            <div style="display: block;" id="div-register" class="container main-container-div">
 
-                <form class="main-container-div-form" method="post">
+                <div id="alertaExito" class="alert alert-success alert-dismissible fade show  main-container-div__alert"
+                    role="alert">
+                    <span><strong>El registro se ha guardado correctamente.</strong></span><br>
+                    <span>Inicia sesión con tu usuario y contraseña
+                        guardada o con tu cuenta de Google</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div id="alertaError" class="alert alert-danger alert-dismissible fade show  main-container-div__alert"
+                    role="alert">
+                    <span><strong>¡Ups, ha ocurrido un problema al guardar el registro!</strong></span><br>
+                    <span> Intenta guardar nuevamente o
+                        probar en otro momento</span>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <form id="form-register" class="main-container-div-form">
 
                     <h3 class="main-container-div-form__h3">Registro</h3>
 
                     <div class="form-row">
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNumberIdentification">N° Identificación</label>
-                            <input id="rg_input1" type="text" class="form-control" name="inputNumberIdentification"
+                            <label for="rg_input1">N° Identificación</label>
+                            <input id="rg_input1" type="text" class="form-control" name="rg_input1"
                                 placeholder="Número de RUN / DNI" required>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputName">Nombre</label>
-                            <input id="rg_input2" type="text" class="form-control" name="inputName"
+                            <label for="rg_input2">Nombre</label>
+                            <input id="rg_input2" type="text" class="form-control" name="rg_input2"
                                 placeholder="Primer nombre" required>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputLastames">Apellidos</label>
-                            <input id="rg_input3" type="text" class="form-control" name="inputLastames"
+                            <label for="rg_input3">Apellidos</label>
+                            <input id="rg_input3" type="text" class="form-control" name="rg_input3"
                                 placeholder="Apellido paterno y materno" required>
                         </div>
 
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputBirthDate">Fecha de nacimiento</label>
-                            <input id="rg_input4" type="date" class="form-control" name="inputBirthDate"
+                            <label for="rg_input4">Fecha de nacimiento</label>
+                            <input id="rg_input4" type="date" class="form-control" name="rg_input4"
                                 placeholder="Fecha de nacimiento" required>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Sexo</label>
-                            <select id="rg_input5" type="text" class="form-control" name="inputNacionality"
-                                placeholder="Sexo" required>
+                            <label for="rg_input5">Sexo</label>
+                            <select id="rg_input5" type="text" class="form-control" name="rg_input5" placeholder="Sexo"
+                                required>
                                 <option selected disabled value="">Seleccione</option>
                                 <option value="Mujer">Mujer</option>
                                 <option value="Hombre">Hombre</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Nacionalidad</label>
-                            <select id="rg_input6" type="text" class="form-control" name="inputNacionality"
-                                placeholder="Sexo" required>
+                            <label for="rg_input6">Nacionalidad</label>
+                            <select id="rg_input6" type="text" class="form-control" name="rg_input6" placeholder="Sexo"
+                                required>
                                 <option selected disabled value="">Seleccione</option>
                                 <option value="Chile">Chile</option>
                                 <option value="Argentina">Argentina</option>
@@ -140,18 +161,18 @@
                             </select>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputEmail">Email</label>
-                            <input id="rg_input7" type="email" class="form-control" name="inputEmail"
+                            <label for="rg_input7">Email</label>
+                            <input id="rg_input7" type="email" class="form-control" name="rg_input7"
                                 placeholder="Email personal" required>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputPhone">Teléfono</label>
-                            <input id="rg_input8" type="number" class="form-control" name="inputEmail"
+                            <label for="rg_input8">Teléfono</label>
+                            <input id="rg_input8" type="number" class="form-control" name="rg_input8"
                                 placeholder="+56 9 1234 5678" required>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Previsión</label>
-                            <select id="rg_input9" type="text" class="form-control" name="inputNacionality"
+                            <label for="rg_input9">Previsión</label>
+                            <select id="rg_input9" type="text" class="form-control" name="rg_input9"
                                 placeholder="Previsión" required>
                                 <option selected disabled value="">Seleccione</option>
                                 <option value="Fonasa">Fonasa</option>
@@ -161,13 +182,13 @@
                         </div>
 
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputPassword">Contraseña</label>
-                            <input id="rg_input10" type="password" class="form-control" name="inputPassword"
+                            <label for="rg_input10">Contraseña</label>
+                            <input id="rg_input10" type="password" class="form-control" name="rg_input10"
                                 placeholder="Mínimo 8 caracteres" required>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputValidatePassword">Confirmar contraseña</label>
-                            <input id="rg_input11" type="password" class="form-control" name="inputValidatePassword"
+                            <label for="rg_input11">Confirmar contraseña</label>
+                            <input id="rg_input11" type="password" class="form-control" name="rg_input11"
                                 placeholder="Repetir contraseña" required>
                         </div>
                     </div>
@@ -178,7 +199,8 @@
                             <label class="form-check-label" for="check-one">Acepto los términos y condiciones</label>
                         </div>
                     </div>
-                    <button type="submit" class="col-md-6 col-lg-4 main-container-form__btn">Registrarse</button>
+                    <button id="btn_form_register" type="button" value="Enviar"
+                        class="col-md-6 col-lg-4 main-container-form__btn">Registrarse</button>
                 </form>
             </div>
 
