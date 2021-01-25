@@ -4,12 +4,12 @@ class InputRG {
         this.id = id;
     }
 
-    // Crea un "listener" por cada input y select, guardando en localStorage el respectivo valor bajo el nombre del id
+    // Crea un "listener" por cada input y select, guardando en sessionStorage el respectivo valor bajo el nombre del id
     createInputListener() {
         const input = document.getElementById(this.id);
         input.addEventListener('blur', function () {
 
-            input.value.length === 0 ? localStorage.removeItem(this.id) : localStorage.setItem(this.id, input.value);
+            input.value.length === 0 ? sessionStorage.removeItem(this.id) : sessionStorage.setItem(this.id, input.value);
 
         });
     }
@@ -19,11 +19,11 @@ class InputRG {
         return input;
     }
 
-    // En caso de existir la data permite leer desde localStorage el valor del input o select
+    // En caso de existir la data permite leer desde sessionStorage el valor del input o select
     readInput() {
         const input = this.createInput();
-        if (localStorage.getItem(this.id) !== null) {
-            input.value = localStorage.getItem(this.id);
+        if (sessionStorage.getItem(this.id) !== null) {
+            input.value = sessionStorage.getItem(this.id);
         }
     }
 
