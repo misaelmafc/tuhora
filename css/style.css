@@ -79,19 +79,19 @@ body {
         margin-right: 1.5em; }
       body .main-container .main-container-div .main-container-div-initial {
         padding: 1.5em; }
+        body .main-container .main-container-div .main-container-div-initial .main-container-div-initial-title {
+          padding-top: 1em; }
+          body .main-container .main-container-div .main-container-div-initial .main-container-div-initial-title .main-container-div-initial-title__a {
+            text-decoration: none;
+            color: #333232; }
         body .main-container .main-container-div .main-container-div-initial .main-container-div-initial-form-login {
-          padding: 2em; }
-        body .main-container .main-container-div .main-container-div-initial .main-container-div-initial-banner {
-          padding-bottom: 1.5em; }
-          body .main-container .main-container-div .main-container-div-initial .main-container-div-initial-banner .main-container-div-initial-banner__txt {
-            color: #333232;
-            margin-left: 0.5em; }
-          body .main-container .main-container-div .main-container-div-initial .main-container-div-initial-banner .main-container-div-initial-banner__a {
-            margin-top: 1em;
-            margin-left: 1em;
-            text-decoration: none; }
+          padding: 1em; }
       body .main-container .main-container-div .main-container-div-form {
         padding: 2em; }
+      body .main-container .main-container-div .main-container-div-form__h5 {
+        margin-bottom: 1em;
+        text-align: center;
+        font-size: 12px; }
       body .main-container .main-container-div .main-container-div-form__h3 {
         color: #333232;
         margin-bottom: 1em; }

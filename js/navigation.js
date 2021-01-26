@@ -34,4 +34,21 @@ $(document).ready(function () {
         $("#div-my-reservations").fadeIn("slow");
     });
 
+    $("#btn_sessionStart").css("color","#673AB7");
+
+    $("#btn_sessionStart").click(function () {
+        $(this).css("color","#673AB7");
+        $("#btn_register").css("color"," #333232");
+        $("#formRegister").hide();
+        $("#formLogin").fadeIn("slow");
+    });
+
+    $("#btn_register").click(function () {
+        $(this).css("color","#673AB7");
+        $("#btn_sessionStart").css("color"," #333232");
+        $("#formLogin").hide();
+        $("#formRegister").fadeIn("slow");
+    });
+
+
 });

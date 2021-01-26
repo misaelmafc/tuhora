@@ -125,33 +125,31 @@ body{
     
             .main-container-div-initial{
                 padding: 1.5em;
+
+                .main-container-div-initial-title{
+                    padding-top: 1em;
+
+                    .main-container-div-initial-title__a{
+                        text-decoration: none;
+                        color: $primary-text;
+                    }
+                }
     
                 .main-container-div-initial-form-login{
-                    padding: 2em;
-                        
+                    padding: 1em;  
                 }
-    
-                .main-container-div-initial-banner{
-                    padding-bottom: 1.5em;
-                    .main-container-div-initial-banner__txt{
-                        color: $primary-text;
-                        margin-left: 0.5em;
-                    }
-            
-                    
-                    .main-container-div-initial-banner__a{
-                        margin-top: 1em;
-                        margin-left: 1em;
-                        text-decoration: none;
-                    }
-    
-                }
-    
+        
             }
     
             .main-container-div-form{
                 padding: 2em;
     
+            }
+
+            .main-container-div-form__h5{
+                margin-bottom: 1em;
+                text-align: center;
+                font-size: 12px;
             }
     
             .main-container-div-form__h3{
