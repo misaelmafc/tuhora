@@ -14,7 +14,6 @@
     <script src="js/navigation.js"></script>
     <script src="js/user.js"></script>
     <script src="js/login.js"></script>
-    <script src="js/rg.js"></script>
     <script src="js/save-user.js"></script>
 </head>
 
@@ -58,6 +57,25 @@
             <div style="display: block;" id="div-login" class="col-sm-8 col-xl-6 container main-container-div">
                 <div class="row align-items-center justify-content-center main-container-div-initial">
 
+                    <div id="alertaExito"
+                        class="alert alert-success alert-dismissible fade show  main-container-div__alert" role="alert">
+                        <span><strong>El registro se ha guardado correctamente.</strong></span><br>
+                        <span>Inicia sesión con tu usuario y contraseña
+                            guardada o con tu cuenta de Google</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div id="alertaError"
+                        class="alert alert-danger alert-dismissible fade show  main-container-div__alert" role="alert">
+                        <span><strong>¡Ups, ha ocurrido un problema al guardar el registro!</strong></span><br>
+                        <span> Intenta guardar nuevamente o
+                            probar en otro momento</span>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
                     <div class="col-12 main-container-div-initial-title row">
                         <a class="col-6 main-container-div-form__h5 main-container-div-initial-title__a"
                             id="btn_sessionStart" href="#">
@@ -75,48 +93,47 @@
                         <div class="form-row align-items-center justify-content-center">
 
                             <div class="form-group col-md-12 col-lg-7">
-                                <label for="inputEmail">Email</label>
-                                <input id="input-username" type="email" class="form-control" id="inputEmail"
-                                    name="inputEmail" placeholder="Email registrado">
+                                <label for="us_email">Email</label>
+                                <input type="email" class="form-control" id="us_email"
+                                    name="us_email" placeholder="Email registrado">
                             </div>
 
                             <div class="w-100 d-none d-lg-block"></div>
                             <div class="form-floating col-sm-12 col-lg-7">
-                                <label for="inputPassword">Contraseña</label>
-                                <input id="input-password" type="password" class="form-control" id="inputPassword"
-                                    name="inputPassword" placeholder="Contraseña guardada">
+                                <label for="us_password">Contraseña</label>
+                                <input type="password" class="form-control" id="us_password"
+                                    name="us_password" placeholder="Contraseña guardada">
                             </div>
                             <div class="w-100 d-none d-lg-block"></div>
 
                             <button id="btn-login-console" type="button"
-                                class="col-md-12 col-lg-7 main-container-form__btn">Iniciar
+                                class="col-md-5 main-container-form__btn">Iniciar
                                 sesión</button>
                         </div>
 
                     </form>
 
-                    <form style="display: none;" id="formRegister" class="col-12 main-container-div-initial-form-login"
-                        action="user.html">
+                    <form style="display: none;" id="form-save-user" class="col-12 main-container-div-initial-form-login">
 
                         <div class="form-row align-items-center justify-content-center">
 
                             <div class="form-group col-md-12 col-lg-7">
-                                <label for="inputEmail">Email</label>
-                                <input id="input-username" type="email" class="form-control" name="inputEmail"
+                                <label for="usr_email">Email</label>
+                                <input id="usr_email" type="email" class="form-control" name="usr_email"
                                     placeholder="Email personal">
                             </div>
 
 
                             <div class="form-group col-sm-12 col-lg-7">
-                                <label for="inputPassword">Contraseña</label>
-                                <input id="input-password" type="password" class="form-control" name="inputPassword"
+                                <label for="usr_password">Contraseña</label>
+                                <input id="usr_password" type="password" class="form-control" name="usr_password"
                                     placeholder="Ingrese su contraseña">
                             </div>
 
 
                             <div class="form-group col-sm-12 col-lg-7">
-                                <label for="inputPassword2">Confirmar contraseña</label>
-                                <input id="input-password2" type="password" class="form-control" name="inputPassword2"
+                                <label for="usr_password2">Confirmar contraseña</label>
+                                <input id="usr_password2" type="password" class="form-control" name="usr_password2"
                                     placeholder="Confirme su contraseña">
                             </div>
 
@@ -124,12 +141,13 @@
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" id="check-one">
                                     <label class="form-check-label" for="check-one">Acepto los <a href="">términos y
-                                        condiciones</a></label>
+                                            condiciones</a></label>
                                 </div>
                             </div>
 
-                            <button id="btn-login-console" type="button"
-                                class="col-md-12 col-lg-7 main-container-form__btn">
+                            <div class="w-100 d-none d-lg-block"></div>
+
+                            <button id="btn_form_save_user" type="button" class="col-md-5 main-container-form__btn">
                                 Registrarse</button>
                         </div>
 

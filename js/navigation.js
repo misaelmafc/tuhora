@@ -39,7 +39,7 @@ $(document).ready(function () {
     $("#btn_sessionStart").click(function () {
         $(this).css("color","#673AB7");
         $("#btn_register").css("color"," #333232");
-        $("#formRegister").hide();
+        $("#form-save-user").hide();
         $("#formLogin").fadeIn("slow");
     });
 
@@ -47,7 +47,7 @@ $(document).ready(function () {
         $(this).css("color","#673AB7");
         $("#btn_sessionStart").css("color"," #333232");
         $("#formLogin").hide();
-        $("#formRegister").fadeIn("slow");
+        $("#form-save-user").fadeIn("slow");
     });
 
 
