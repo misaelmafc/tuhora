@@ -1,14 +1,17 @@
 $(document).ready(function () {
-
-    $("#btn-login-console").click(function(){
-
-        let username = $('#input-username').val();
-        let password = $('#input-password').val();
-
-        let user = new User(username, password);
-
-        user.validateSesion();
-        
+    $('#btn-us-login').click(function () {
+        var formulario = $('#formLogin').serializeArray();
+        //console.log(formulario);
+        $.ajax({
+            type: 'POST',
+            dataType: 'json',
+            url: 'php/login.php',
+            data: formulario,
+        }).done(function () {
+            document.getElementById("formLogin").reset();
+            window.location.replace('user.php');
+        }).fail(function () {
+            alert('Acceso denegado');
+        });
     });
-
 });
