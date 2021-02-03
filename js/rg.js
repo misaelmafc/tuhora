@@ -34,7 +34,7 @@ window.addEventListener('load', function () {
     let inputs = [];
 
     // Permite rellenar el arreglo con el id de cada elemento del formulario
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i <= 8; i++) {
         inputs.push(`rg_input${i}`);
     }
 

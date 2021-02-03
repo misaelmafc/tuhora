@@ -1,8 +1,8 @@
 <?php
-    session_start();
-    if($_SESSION['token'] == null){
-        header("Location:index.html");
-    }
+session_start();
+if ($_SESSION['token'] == null) {
+    header("Location:index.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="js/navigation.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="js/main.js"></script>
+    <script src="js/main-user.js"></script>
     <script src="js/save-patient.js"></script>
     <script src="js/rg.js"></script>
 </head>
@@ -28,38 +28,35 @@
             <a class="navbar-brand" href="user.php">
                 <img class="nav-container__logo" src="assets/logo.jpg">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item  p-2">
-                        <a class="nav-link body__button-a" id="btn-reservation-availability" href="#">Disponibilidad
+                        <a class="nav-link body__button-a" id="btn-us-reservation-availability" href="#">Disponibilidad
                             clínica</a>
                     </li>
                     <li class="nav-item  p-2">
-                        <a class="nav-link body__button-a" id="btn-reservation-doctor" href="#">Búsqueda de
+                        <a class="nav-link body__button-a" id="btn-us-reservation-doctor" href="#">Búsqueda de
                             profesional</a>
                     </li>
                     <li class="nav-item  p-2">
-                        <a class="nav-link body__button-a" id="btn-my-reservations" href="#">Mis reservas</a>
+                        <a class="nav-link body__button-a" id="btn-us-my-reservations" href="#">Mis reservas</a>
                     </li>
                     <li class="nav-item  p-2">
-                        <a class="nav-link body__button-a" id="btn-user" href="#">
-                            <img style="width: 1.75em;" src="assets/user.png" alt="" data-toggle="tooltip"
-                                data-placement="bottom" title="Mi perfil">
+                        <a class="nav-link body__button-a" id="btn-us-user" href="#">
+                            <img style="width: 1.75em;" src="assets/user.png" alt="" data-toggle="tooltip" data-placement="bottom" title="Mi perfil">
                         </a>
                     </li>
                     <li class="nav-item  p-2">
                         <a class="nav-link body__button-a" id="" href="php/logout.php">
-                            <img style="width: 1.75em;" src="assets/logout.png" alt="" data-toggle="tooltip"
-                                data-placement="bottom" title="Cerrar sesión">
+                            <img style="width: 1.75em;" src="assets/logout.png" alt="" data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión">
                         </a>
                     </li>
-                    <li class="nav-item  p-2">
-                        <a class="nav-link body__button-a" id="btn-register" href="#">Registrarse</a>
-                    </li>
+<!--                     <li class="nav-item  p-2">
+                        <a class="nav-link body__button-a" id="btn-us-register" href="#">Registrarse</a>
+                    </li> -->
                 </ul>
             </div>
         </div>
@@ -69,7 +66,7 @@
 
         <div class="main-container-row row align-items-center">
 
-            <div id="div-reservation-availability" class="container main-container-div">
+            <div id="div-us-reservation-availability" class="container main-container-div">
 
                 <form class="main-container-div-form" method="post">
 
@@ -78,8 +75,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="inputNacionality">Centro de salud</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality"
-                                placeholder="Nacionalidad" required>
+                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
                                 <option selected value="clinica1">Clínica uno</option>
                                 <option value="clinica2">Clínica dos</option>
                                 <option value="clinica3">Clínica tres</option>
@@ -90,8 +86,7 @@
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="inputNacionality">Especialidad</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality"
-                                placeholder="Nacionalidad" required>
+                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
                                 <option selected value="option1">Medicina general</option>
                                 <option value="option2">Cardiología</option>
                                 <option value="option3">Dermatología</option>
@@ -102,13 +97,11 @@
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="inputBirthDate">Fecha de reserva</label>
-                            <input type="date" class="form-control" id="inputBirthDate" name="inputBirthDate"
-                                placeholder="Fecha de nacimiento" required>
+                            <input type="date" class="form-control" id="inputBirthDate" name="inputBirthDate" placeholder="Fecha de nacimiento" required>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="inputNacionality">Médico</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality"
-                                placeholder="Nacionalidad" required>
+                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
                                 <option selected value="doctor1">Doctora 1</option>
                                 <option value="doctor2">Doctor 2</option>
                                 <option value="doctor3">Doctora 3</option>
@@ -119,8 +112,7 @@
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="inputNacionality">Horario disponible</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality"
-                                placeholder="Nacionalidad" required>
+                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
                                 <option selected value="horario1">Horario 1</option>
                                 <option value="horario2">Horario 2</option>
                                 <option value="horario3">Horario 3</option>
@@ -136,12 +128,11 @@
                             <label class="form-check-label" for="gridCheck">Acepto los términos y condiciones</label>
                         </div>
                     </div>
-                    <button type="submit" id="btnTest"
-                        class="col-md-6 col-lg-4 main-container-form__btn">Reservar</button>
+                    <button type="submit" id="btnTest" class="col-md-6 col-lg-4 main-container-form__btn">Reservar</button>
                 </form>
             </div>
 
-            <div id="div-reservation-doctor" class="container main-container-div">
+            <div id="div-us-reservation-doctor" class="container main-container-div">
 
                 <form class="main-container-div-form" method="post">
 
@@ -150,8 +141,7 @@
                     <div class="form-row">
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="inputNacionality">Médico</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality"
-                                placeholder="Nacionalidad" required>
+                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
                                 <option selected value="doctor1">Doctora 1</option>
                                 <option value="doctor2">Doctor 2</option>
                                 <option value="doctor3">Doctora 3</option>
@@ -162,8 +152,7 @@
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="inputNacionality">Especialidad</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality"
-                                placeholder="Nacionalidad" required>
+                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
                                 <option selected value="option1">Medicina general</option>
                                 <option value="option2">Cardiología</option>
                                 <option value="option3">Dermatología</option>
@@ -174,13 +163,11 @@
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="inputBirthDate">Fecha de reserva</label>
-                            <input type="date" class="form-control" id="inputBirthDate" name="inputBirthDate"
-                                placeholder="Fecha de nacimiento" required>
+                            <input type="date" class="form-control" id="inputBirthDate" name="inputBirthDate" placeholder="Fecha de nacimiento" required>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="inputNacionality">Horario disponible</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality"
-                                placeholder="Nacionalidad" required>
+                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
                                 <option selected value="horario1">Horario 1</option>
                                 <option value="horario2">Horario 2</option>
                                 <option value="horario3">Horario 3</option>
@@ -191,8 +178,7 @@
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="inputNacionality">Centro de salud</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality"
-                                placeholder="Nacionalidad" required>
+                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
                                 <option selected value="clinica1">Clínica uno</option>
                                 <option value="clinica2">Clínica dos</option>
                                 <option value="clinica3">Clínica tres</option>
@@ -208,12 +194,11 @@
                             <label class="form-check-label" for="gridCheck">Acepto los términos y condiciones</label>
                         </div>
                     </div>
-                    <button type="submit" id="btnTest"
-                        class="col-md-6 col-lg-4 main-container-form__btn">Reservar</button>
+                    <button type="submit" id="btnTest" class="col-md-6 col-lg-4 main-container-form__btn">Reservar</button>
                 </form>
             </div>
 
-            <div id="div-my-reservations" class="container main-container-div">
+            <div id="div-us-my-reservations" class="container main-container-div">
 
                 <div class="main-container-div-form">
 
@@ -263,7 +248,7 @@
 
             </div>
 
-            <div style="display: block;" id="div-user" class="container main-container-div">
+            <div id="div-us-user" class="container main-container-div">
 
                 <form class="main-container-div-form" method="post">
 
@@ -271,55 +256,41 @@
 
                     <div class="form-row">
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNumberIdentification">N° Identificación</label>
-                            <input readonly type="text" class="form-control" id="inputNumberIdentification"
-                                name="inputNumberIdentification" value="19.094.390-9">
+                            <label for="user-input0">N° Identificación</label>
+                            <input readonly type="text" class="form-control" id="user-input0" name="user-input0">
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputName">Nombre</label>
-                            <input readonly type="text" class="form-control" id="inputName" name="inputName"
-                                value="Misael">
+                            <label for="user-input1">Nombre</label>
+                            <input readonly type="text" class="form-control" id="user-input1" name="user-input1">
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputLastames">Apellidos</label>
-                            <input readonly type="text" class="form-control" id="inputLastames" name="inputLastames"
-                                value="Faúndez Castillo">
+                            <label for="user-input2">Apellidos</label>
+                            <input readonly type="text" class="form-control" id="user-input2" name="user-input2">
                         </div>
 
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputBirthDate">Fecha de nacimiento</label>
-                            <input readonly class="form-control" id="inputBirthDate" name="inputBirthDate"
-                                value="18-06-1995" required>
+                            <label for="user-input3">Fecha de nacimiento</label>
+                            <input readonly class="form-control" id="user-input3" name="user-input3">
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Sexo</label>
-                            <input readonly type="text" class="form-control" id="inputNacionality" name="inputLastames"
-                                value="Hombre">
+                            <label for="user-input4">Sexo</label>
+                            <input readonly type="text" class="form-control" id="user-input4" name="user-input4">
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Nacionalidad</label>
-                            <input readonly type="text" class="form-control" id="inputNacionality" name="inputLastames"
-                                value="Chile">
+                            <label for="user-input5">Nacionalidad</label>
+                            <input readonly type="text" class="form-control" id="user-input5" name="user-input5">
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputEmail">Email</label>
-                            <input readonly type="email" class="form-control" id="inputEmail" name="inputEmail"
-                                value="misaelmafc@gmail.com" required>
+                            <label for="user-input6">Email</label>
+                            <input readonly type="email" class="form-control" id="user-input6" name="user-input6">
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputEmail">Teléfono</label>
-                            <input readonly type="email" class="form-control" id="inputEmail" name="inputEmail"
-                                value="+56 9 1234 5678" required>
+                            <label for="user-input7">Teléfono</label>
+                            <input readonly type="email" class="form-control" id="user-input7" name="user-input7">
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Previsión</label>
-                            <input readonly type="text" class="form-control" id="inputPrevision" name="inputLastames"
-                                value="Fonasa">
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputPassword">Contraseña</label>
-                            <input readonly type="text" class="form-control" id="inputPassword" name="inputPassword"
-                                value="123456789" required>
+                            <label for="user-input8">Previsión</label>
+                            <input readonly type="text" class="form-control" id="user-input8" name="user-input8">
                         </div>
                     </div>
                     <button type="submit" id="btnTest" class="col-md-6 col-lg-4 main-container-form__btn">Actualizar
@@ -327,10 +298,9 @@
                 </form>
             </div>
 
-            <div id="div-register" class="container main-container-div">
+            <div id="div-us-register" class="container main-container-div">
 
-                <div id="alertaExito" class="alert alert-success alert-dismissible fade show  main-container-div__alert"
-                    role="alert">
+                <div id="alertaExito" class="alert alert-success alert-dismissible fade show  main-container-div__alert" role="alert">
                     <span><strong>El registro se ha guardado correctamente.</strong></span><br>
                     <span>Inicia sesión con tu usuario y contraseña
                         guardada o con tu cuenta de Google</span>
@@ -338,8 +308,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div id="alertaError" class="alert alert-danger alert-dismissible fade show  main-container-div__alert"
-                    role="alert">
+                <div id="alertaError" class="alert alert-danger alert-dismissible fade show  main-container-div__alert" role="alert">
                     <span><strong>¡Ups, ha ocurrido un problema al guardar el registro!</strong></span><br>
                     <span> Intenta guardar nuevamente o
                         probar en otro momento</span>
@@ -355,29 +324,24 @@
                     <div class="form-row">
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="rg_input1">N° Identificación</label>
-                            <input id="rg_input1" type="text" class="form-control" name="rg_input1"
-                                placeholder="Número de RUN / DNI" required>
+                            <input id="rg_input1" type="text" class="form-control" name="rg_input1" placeholder="Número de RUN / DNI" required>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="rg_input2">Nombre</label>
-                            <input id="rg_input2" type="text" class="form-control" name="rg_input2"
-                                placeholder="Primer nombre" required>
+                            <input id="rg_input2" type="text" class="form-control" name="rg_input2" placeholder="Primer nombre" required>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="rg_input3">Apellidos</label>
-                            <input id="rg_input3" type="text" class="form-control" name="rg_input3"
-                                placeholder="Apellido paterno y materno" required>
+                            <input id="rg_input3" type="text" class="form-control" name="rg_input3" placeholder="Apellido paterno y materno" required>
                         </div>
 
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="rg_input4">Fecha de nacimiento</label>
-                            <input id="rg_input4" type="date" class="form-control" name="rg_input4"
-                                placeholder="Fecha de nacimiento" required>
+                            <input id="rg_input4" type="date" class="form-control" name="rg_input4" placeholder="Fecha de nacimiento" required>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="rg_input5">Sexo</label>
-                            <select id="rg_input5" type="text" class="form-control" name="rg_input5" placeholder="Sexo"
-                                required>
+                            <select id="rg_input5" type="text" class="form-control" name="rg_input5" placeholder="Sexo" required>
                                 <option selected disabled value="">Seleccione</option>
                                 <option value="Mujer">Mujer</option>
                                 <option value="Hombre">Hombre</option>
@@ -385,8 +349,7 @@
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
                             <label for="rg_input6">Nacionalidad</label>
-                            <select id="rg_input6" type="text" class="form-control" name="rg_input6" placeholder="Sexo"
-                                required>
+                            <select id="rg_input6" type="text" class="form-control" name="rg_input6" placeholder="Sexo" required>
                                 <option selected disabled value="">Seleccione</option>
                                 <option value="Chile">Chile</option>
                                 <option value="Argentina">Argentina</option>
@@ -396,19 +359,12 @@
                             </select>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="rg_input7">Email</label>
-                            <input id="rg_input7" type="email" class="form-control" name="rg_input7"
-                                placeholder="Email personal" required>
+                            <label for="rg_input7">Teléfono</label>
+                            <input id="rg_input7" type="number" class="form-control" name="rg_input7" placeholder="+56 9 1234 5678" required>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="rg_input8">Teléfono</label>
-                            <input id="rg_input8" type="number" class="form-control" name="rg_input8"
-                                placeholder="+56 9 1234 5678" required>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="rg_input9">Previsión</label>
-                            <select id="rg_input9" type="text" class="form-control" name="rg_input9"
-                                placeholder="Previsión" required>
+                            <label for="rg_input8">Previsión</label>
+                            <select id="rg_input8" type="text" class="form-control" name="rg_input8" placeholder="Previsión" required>
                                 <option selected disabled value="">Seleccione</option>
                                 <option value="Fonasa">Fonasa</option>
                                 <option value="Isapre">Isapre</option>
@@ -427,21 +383,31 @@
                                 placeholder="Repetir contraseña" required>
                         </div> -->
                     </div>
-
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="check-one">
-                            <label class="form-check-label" for="check-one">Acepto los términos y condiciones</label>
-                        </div>
-                    </div>
-                    <button id="btn_form_register" type="button" value="Enviar"
-                        class="col-md-6 col-lg-4 main-container-form__btn">Registrarse</button>
+                    
+                    <button id="btn_form_register" type="button" value="Enviar" class="col-md-6 col-lg-4 main-container-form__btn">Guardar datos</button>
                 </form>
             </div>
 
         </div>
 
     </main>
+
+    <div class="modal fade" id="accept-terms" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Confirmar</h5>
+                </div>
+                <div class="modal-body">
+                    <p>Para continuar navegando debe rellenar sus datos personales</p>
+                </div>
+                <div class="modal-footer">
+                    <button id="btn-modal-cancel" type="button" class="btn btn-secondary">Cerrar</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="footer-container">
         <div class="container footer-container-div">
@@ -517,15 +483,10 @@
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"
-        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
-        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
 
 </html>

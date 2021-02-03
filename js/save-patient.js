@@ -10,16 +10,18 @@ $(document).ready(function () {
             if (response == 1) {
                 document.getElementById("form-register").reset();
                 sessionStorage.clear();
+                validation = true;
                 $('#alertaExito').fadeIn();
                 setTimeout(function () { $('#alertaExito').fadeOut(); }, 7500);
             } else {
                 $('#alertaError').fadeIn();
                 setTimeout(function () { $('#alertaError').fadeOut(); }, 7500);
             }
-        }).fail(function () {
+        }).fail(function (response) {
             $('#alertaError').fadeIn();
             setTimeout(function () { $('#alertaError').fadeOut(); }, 7500);
         });
         return false;
     });
 });
+
