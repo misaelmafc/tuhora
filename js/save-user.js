@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $('#btn_form_save_user').click(function () {
+        let alert = new Alert();
         var formulario = $('#form-save-user').serializeArray();
         $.ajax({
             type: 'POST',
@@ -9,15 +10,14 @@ $(document).ready(function () {
         }).done(function (response) {
             if (response == 1) {
                 document.getElementById("form-save-user").reset();
-                $('#alertaExito').fadeIn();
-                setTimeout(function () { $('#alertaExito').fadeOut(); }, 7500);
+                alert.createAlert('alert-success', 'Registro exitoso', 'Ingrese con su email y contraseña');
             } else {
-                $('#alertaError').fadeIn();
-                setTimeout(function () { $('#alertaError').fadeOut(); }, 7500);
+                document.getElementById("form-save-user").reset();
+                alert.createAlert('alert-danger', 'Registro fallido', 'Intente nuevamente o contacte al administrador');
             }
-        }).fail(function (response) {
-            $('#alertaError').fadeIn();
-            setTimeout(function () { $('#alertaError').fadeOut(); }, 7500);
+        }).fail(function () {
+            document.getElementById("form-save-user").reset();
+            alert.createAlert('alert-danger', 'Registro fallido', 'Intente nuevamente o contacte al administrador');
         });
         return false;
     });

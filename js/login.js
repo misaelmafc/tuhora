@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('#btn-us-login').click(function () {
+        let alert = new Alert();
         var formulario = $('#formLogin').serializeArray();
-        //console.log(formulario);
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -11,7 +11,8 @@ $(document).ready(function () {
             document.getElementById("formLogin").reset();
             window.location.replace('user.php');
         }).fail(function () {
-            alert('Acceso denegado');
+            document.getElementById("formLogin").reset();
+            alert.createAlert('alert-danger', 'Acceso denegado', 'Email y contraseña no coinciden');
         });
     });
 });

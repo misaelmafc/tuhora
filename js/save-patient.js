@@ -1,5 +1,6 @@
 $(document).ready(function () {
     $('#btn_form_register').click(function () {
+        let alert = new Alert();
         var formulario = $('#form-register').serializeArray();
         $.ajax({
             type: 'POST',
@@ -11,15 +12,12 @@ $(document).ready(function () {
                 document.getElementById("form-register").reset();
                 sessionStorage.clear();
                 validation = true;
-                $('#alertaExito').fadeIn();
-                setTimeout(function () { $('#alertaExito').fadeOut(); }, 7500);
+                alert.createAlert('alert-success', 'Registro exitoso', 'Puede reservar con su sesión iniciada');
             } else {
-                $('#alertaError').fadeIn();
-                setTimeout(function () { $('#alertaError').fadeOut(); }, 7500);
+                alert.createAlert('alert-danger', 'Registro fallido', 'Intente nuevamente o contacte al administrador');
             }
-        }).fail(function (response) {
-            $('#alertaError').fadeIn();
-            setTimeout(function () { $('#alertaError').fadeOut(); }, 7500);
+        }).fail(function () {
+            alert.createAlert('alert-danger', 'Registro fallido', 'Intente nuevamente o contacte al administrador');
         });
         return false;
     });

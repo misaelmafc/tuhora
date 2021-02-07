@@ -10,6 +10,15 @@ $white              : #FFFFFF;
 body{
     overflow-x: hidden;
 
+    .alert{
+        z-index: 5000; 
+        display: none; 
+        position: fixed; 
+        top: 7.5em; 
+        left: 1.5em;
+        margin-right: 1.5em;
+    }
+
     .body__button-a{
         font-weight: bold;
         color: $primary-color;
@@ -114,12 +123,12 @@ body{
             -webkit-box-shadow: -6px 7px 10px -4px rgba(0,0,0,0.67); 
             box-shadow: -6px 7px 10px -4px rgba(0,0,0,0.67);
 
-            .main-container-div__alert{
-                z-index: 5000;
-                position: fixed; 
-                top: 7.5em; 
-                left: 1.5em;
-                margin-right: 1.5em;
+            .main-container-div-home{
+                margin: 2em;
+
+                .main-container-div-home__title{
+                    color: $primary-color;
+                }
             }
     
             .main-container-div-initial{

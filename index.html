@@ -15,6 +15,7 @@
     <script src="js/main-index.js"></script>
     <script src="js/save-user.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/Alert.js"></script>
 
 </head>
 
@@ -32,12 +33,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item  p-2">
-                        <a class="nav-link body__button-a" id="btn-reservation-availability" href="#">Disponibilidad
-                            clínica</a>
-                    </li>
-                    <li class="nav-item  p-2">
-                        <a class="nav-link body__button-a" id="btn-reservation-doctor" href="#">Búsqueda de
-                            profesional</a>
+                        <a class="nav-link body__button-a" id="btn-main" href="#">Inicio</a>
                     </li>
                     <li class="nav-item  p-2">
                         <a class="nav-link body__button-a" id="btn-login" href="#">
@@ -55,27 +51,8 @@
 
         <div class="main-container-row row align-items-center">
 
-            <div style="display: block;" id="div-login" class="col-sm-6 col-xl-4 container main-container-div">
+            <div id="div-login" class="col-sm-6 col-xl-4 container main-container-div">
                 <div class="row align-items-center justify-content-center main-container-div-initial">
-
-<!--                     <div id="alertaExito"
-                        class="alert alert-success alert-dismissible fade show  main-container-div__alert" role="alert">
-                        <span><strong>El registro se ha guardado correctamente.</strong></span><br>
-                        <span>Inicia sesión con tu usuario y contraseña
-                            guardada o con tu cuenta de Google</span>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div id="alertaError"
-                        class="alert alert-danger alert-dismissible fade show  main-container-div__alert" role="alert">
-                        <span><strong>¡Ups, ha ocurrido un problema al guardar el registro!</strong></span><br>
-                        <span> Intenta guardar nuevamente o
-                            probar en otro momento</span>
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div> -->
 
                     <div class="col-12 main-container-div-initial-title row">
                         <a class="col-6 main-container-div-form__h5 main-container-div-initial-title__a"
@@ -156,146 +133,17 @@
                 </div>
             </div>
 
-            <div id="div-reservation-availability" class="container main-container-div">
-
-                <form class="main-container-div-form" method="post">
-
-                    <h3 class="main-container-div-form__h3">Disponibilidad clínica</h3>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Centro de salud</label>
-                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
-                                required>
-                                <option selected value="clinica1">Clínica uno</option>
-                                <option value="clinica2">Clínica dos</option>
-                                <option value="clinica3">Clínica tres</option>
-                                <option value="clinica4">Clínica cuatro</option>
-                                <option value="clinica5">Clínica seis</option>
-                                <option value="clinica6">Clínica siete</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Especialidad</label>
-                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
-                                required>
-                                <option selected value="option1">Medicina general</option>
-                                <option value="option2">Cardiología</option>
-                                <option value="option3">Dermatología</option>
-                                <option value="option3">Gastroenterología</option>
-                                <option value="option4">Ginegología y Obstetricia.</option>
-                                <option value="option5">Pediatría</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputBirthDate">Fecha de reserva</label>
-                            <input type="date" class="form-control" name="inputBirthDate"
-                                placeholder="Fecha de nacimiento" required>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Médico</label>
-                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
-                                required>
-                                <option selected value="doctor1">Doctora 1</option>
-                                <option value="doctor2">Doctor 2</option>
-                                <option value="doctor3">Doctora 3</option>
-                                <option value="doctor4">Doctor 4</option>
-                                <option value="doctor5">Doctora 5</option>
-                                <option value="doctor6">Doctor 6</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Horario disponible</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality"
-                                placeholder="Nacionalidad" required>
-                                <option selected value="horario1">Horario 1</option>
-                                <option value="horario2">Horario 2</option>
-                                <option value="horario3">Horario 3</option>
-                                <option value="horario4">Horario 4</option>
-                                <option value="horario5">Horario 5</option>
-                                <option value="horario5">Horario 6</option>
-                            </select>
-                        </div>
+            <div style="display: block;" id="div-main" class="container main-container-div">
+                <div class="row main-container-div-home">
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="assets/img-01.png" alt="">
                     </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="check-two">
-                            <label class="form-check-label" for="check-two">Acepto los términos y condiciones</label>
-                        </div>
+                    <div class="col-md-5 align-self-center">
+                        <h3><span class="main-container-div-home__title">Especialistas altamente qualificados</span></h3>
+                        <br>
+                        <h5><span>Seguridad y tranquilidad para su familia</span></h5>
                     </div>
-                    <button type="submit" class="col-md-6 col-lg-4 main-container-form__btn">Reservar</button>
-                </form>
-            </div>
-
-            <div id="div-reservation-doctor" class="container main-container-div">
-
-                <form class="main-container-div-form" method="post">
-
-                    <h3 class="main-container-div-form__h3">Búsqueda de profesional</h3>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Médico</label>
-                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
-                                required>
-                                <option selected value="doctor1">Doctora 1</option>
-                                <option value="doctor2">Doctor 2</option>
-                                <option value="doctor3">Doctora 3</option>
-                                <option value="doctor4">Doctor 4</option>
-                                <option value="doctor5">Doctora 5</option>
-                                <option value="doctor6">Doctor 6</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Especialidad</label>
-                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
-                                required>
-                                <option selected value="option1">Medicina general</option>
-                                <option value="option2">Cardiología</option>
-                                <option value="option3">Dermatología</option>
-                                <option value="option3">Gastroenterología</option>
-                                <option value="option4">Ginegología y Obstetricia.</option>
-                                <option value="option5">Pediatría</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputBirthDate">Fecha de reserva</label>
-                            <input type="date" class="form-control" name="inputBirthDate"
-                                placeholder="Fecha de nacimiento" required>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Horario disponible</label>
-                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
-                                required>
-                                <option selected value="horario1">Horario 1</option>
-                                <option value="horario2">Horario 2</option>
-                                <option value="horario3">Horario 3</option>
-                                <option value="horario4">Horario 4</option>
-                                <option value="horario5">Horario 5</option>
-                                <option value="horario5">Horario 6</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Centro de salud</label>
-                            <select type="text" class="form-control" name="inputNacionality" placeholder="Nacionalidad"
-                                required>
-                                <option selected value="clinica1">Clínica uno</option>
-                                <option value="clinica2">Clínica dos</option>
-                                <option value="clinica3">Clínica tres</option>
-                                <option value="clinica4">Clínica cuatro</option>
-                                <option value="clinica5">Clínica seis</option>
-                                <option value="clinica6">Clínica siete</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="check-three">
-                            <label class="form-check-label" for="check-three">Acepto los términos y condiciones</label>
-                        </div>
-                    </div>
-                    <button type="submit" class="col-md-6 col-lg-4 main-container-form__btn">Reservar</button>
-                </form>
+                </div>
             </div>
 
         </div>
@@ -309,28 +157,28 @@
                     <h5 class="footer-container-div-row__h5">Ubicaciones</h5>
                     <div class="row">
                         <div class="col-md-6">
-                            <h6>Clínica Uno</h6>
-                            <p>Av. Lorem Ipsum 1234</p>
+                            <h6>Clínica Holandesa</h6>
+                            <p>Av. Kennedy 4865</p>
                         </div>
                         <div class="col-md-6">
-                            <h6>Clínica Dos</h6>
-                            <p>Av. Lorem Ipsum 1234</p>
+                            <h6>Clínica Las Margaritas</h6>
+                            <p>Av. Las Margaritas 18547</p>
                         </div>
                         <div class="col-md-6">
-                            <h6>Clínica Tres</h6>
-                            <p>Av. Lorem Ipsum 1234</p>
+                            <h6>Clínica Los Montes</h6>
+                            <p>Av. Diagonal Sur 3266</p>
                         </div>
                         <div class="col-md-6">
-                            <h6>Clínica Cuatro</h6>
-                            <p>Av. Lorem Ipsum 1234</p>
+                            <h6>Hospital Dra. Julieta</h6>
+                            <p>Av. Doctora Julieta 283</p>
                         </div>
                         <div class="col-md-6">
-                            <h6>Clínica Cinco</h6>
-                            <p>Av. Lorem Ipsum 1234</p>
+                            <h6>Hospital Interzonal</h6>
+                            <p>Av. Juan Justo 6701</p>
                         </div>
                         <div class="col-md-6">
-                            <h6>Clínica Seis</h6>
-                            <p>Av. Lorem Ipsum 1234</p>
+                            <h6>Hospital Metropolitano</h6>
+                            <p>Av. Alemania 50</p>
                         </div>
                     </div>
                 </div>

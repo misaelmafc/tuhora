@@ -1,5 +1,12 @@
 body {
   overflow-x: hidden; }
+  body .alert {
+    z-index: 5000;
+    display: none;
+    position: fixed;
+    top: 7.5em;
+    left: 1.5em;
+    margin-right: 1.5em; }
   body .body__button-a {
     font-weight: bold;
     color: #673AB7;
@@ -70,12 +77,10 @@ body {
       border-radius: 1.5em;
       -webkit-box-shadow: -6px 7px 10px -4px rgba(0, 0, 0, 0.67);
       box-shadow: -6px 7px 10px -4px rgba(0, 0, 0, 0.67); }
-      body .main-container .main-container-div .main-container-div__alert {
-        z-index: 5000;
-        position: fixed;
-        top: 7.5em;
-        left: 1.5em;
-        margin-right: 1.5em; }
+      body .main-container .main-container-div .main-container-div-home {
+        margin: 2em; }
+        body .main-container .main-container-div .main-container-div-home .main-container-div-home__title {
+          color: #673AB7; }
       body .main-container .main-container-div .main-container-div-initial {
         padding: 1.5em; }
         body .main-container .main-container-div .main-container-div-initial .main-container-div-initial-title {

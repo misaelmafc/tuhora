@@ -27,8 +27,6 @@ $(document).ready(function () {
 
     showContent('btn-us-reservation-availability', 'div-us-reservation-availability');
 
-    showContent('btn-us-reservation-doctor', 'div-us-reservation-doctor');
-
     showContent('btn-us-my-reservations', 'div-us-my-reservations');
 
     function showContent(btnName, idName) {

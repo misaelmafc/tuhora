@@ -19,6 +19,7 @@ if ($_SESSION['token'] == null) {
     <script src="js/main-user.js"></script>
     <script src="js/save-patient.js"></script>
     <script src="js/rg.js"></script>
+    <script src="js/disponibilidad_clinica.js"></script>
 </head>
 
 <body>
@@ -38,10 +39,6 @@ if ($_SESSION['token'] == null) {
                             clínica</a>
                     </li>
                     <li class="nav-item  p-2">
-                        <a class="nav-link body__button-a" id="btn-us-reservation-doctor" href="#">Búsqueda de
-                            profesional</a>
-                    </li>
-                    <li class="nav-item  p-2">
                         <a class="nav-link body__button-a" id="btn-us-my-reservations" href="#">Mis reservas</a>
                     </li>
                     <li class="nav-item  p-2">
@@ -54,9 +51,6 @@ if ($_SESSION['token'] == null) {
                             <img style="width: 1.75em;" src="assets/logout.png" alt="" data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión">
                         </a>
                     </li>
-<!--                     <li class="nav-item  p-2">
-                        <a class="nav-link body__button-a" id="btn-us-register" href="#">Registrarse</a>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -68,133 +62,49 @@ if ($_SESSION['token'] == null) {
 
             <div id="div-us-reservation-availability" class="container main-container-div">
 
-                <form class="main-container-div-form" method="post">
+                <form id="form_dc" class="main-container-div-form" method="post">
 
                     <h3 class="main-container-div-form__h3">Disponibilidad clínica</h3>
 
                     <div class="form-row">
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Centro de salud</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
-                                <option selected value="clinica1">Clínica uno</option>
-                                <option value="clinica2">Clínica dos</option>
-                                <option value="clinica3">Clínica tres</option>
-                                <option value="clinica4">Clínica cuatro</option>
-                                <option value="clinica5">Clínica seis</option>
-                                <option value="clinica6">Clínica siete</option>
+                        <div id="id_centro_salud" class="form-group col-md-6 col-lg-4">
+                            <label for="centro_salud">Centro de salud</label>
+                            <select type="text" class="form-control" id="centro_salud" name="centro_salud" required>
+                                <option selected disabled>Seleccione</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Especialidad</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
-                                <option selected value="option1">Medicina general</option>
-                                <option value="option2">Cardiología</option>
-                                <option value="option3">Dermatología</option>
-                                <option value="option3">Gastroenterología</option>
-                                <option value="option4">Ginegología y Obstetricia.</option>
-                                <option value="option5">Pediatría</option>
+                            <label for="especialidad">Especialidad</label>
+                            <select type="text" class="form-control" id="especialidad" name="especialidad" required>
+                                <option selected value="">Seleccione</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputBirthDate">Fecha de reserva</label>
-                            <input type="date" class="form-control" id="inputBirthDate" name="inputBirthDate" placeholder="Fecha de nacimiento" required>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Médico</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
-                                <option selected value="doctor1">Doctora 1</option>
-                                <option value="doctor2">Doctor 2</option>
-                                <option value="doctor3">Doctora 3</option>
-                                <option value="doctor4">Doctor 4</option>
-                                <option value="doctor5">Doctora 5</option>
-                                <option value="doctor6">Doctor 6</option>
+                            <label for="fecha_disponible">Fecha disponible</label>
+                            <select type="text" class="form-control" id="fecha_disponible" name="fecha_disponible" required>
+                                <option selected value="">Seleccione</option>
                             </select>
                         </div>
                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Horario disponible</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
-                                <option selected value="horario1">Horario 1</option>
-                                <option value="horario2">Horario 2</option>
-                                <option value="horario3">Horario 3</option>
-                                <option value="horario4">Horario 4</option>
-                                <option value="horario5">Horario 5</option>
-                                <option value="horario5">Horario 6</option>
+                            <label for="medico">Médico</label>
+                            <select type="text" class="form-control" id="medico" name="medico" required>
+                                <option selected value="">Seleccione</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-6 col-lg-4">
+                            <label for="horario_disponible">Horario disponible</label>
+                            <select type="text" class="form-control" id="horario_disponible" name="horario_disponible" required>
+                                <option selected value="">Seleccione</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <input class="form-check-input" type="checkbox" id="check_dc">
                             <label class="form-check-label" for="gridCheck">Acepto los términos y condiciones</label>
                         </div>
                     </div>
-                    <button type="submit" id="btnTest" class="col-md-6 col-lg-4 main-container-form__btn">Reservar</button>
-                </form>
-            </div>
-
-            <div id="div-us-reservation-doctor" class="container main-container-div">
-
-                <form class="main-container-div-form" method="post">
-
-                    <h3 class="main-container-div-form__h3">Búsqueda de profesional</h3>
-
-                    <div class="form-row">
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Médico</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
-                                <option selected value="doctor1">Doctora 1</option>
-                                <option value="doctor2">Doctor 2</option>
-                                <option value="doctor3">Doctora 3</option>
-                                <option value="doctor4">Doctor 4</option>
-                                <option value="doctor5">Doctora 5</option>
-                                <option value="doctor6">Doctor 6</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Especialidad</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
-                                <option selected value="option1">Medicina general</option>
-                                <option value="option2">Cardiología</option>
-                                <option value="option3">Dermatología</option>
-                                <option value="option3">Gastroenterología</option>
-                                <option value="option4">Ginegología y Obstetricia.</option>
-                                <option value="option5">Pediatría</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputBirthDate">Fecha de reserva</label>
-                            <input type="date" class="form-control" id="inputBirthDate" name="inputBirthDate" placeholder="Fecha de nacimiento" required>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Horario disponible</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
-                                <option selected value="horario1">Horario 1</option>
-                                <option value="horario2">Horario 2</option>
-                                <option value="horario3">Horario 3</option>
-                                <option value="horario4">Horario 4</option>
-                                <option value="horario5">Horario 5</option>
-                                <option value="horario5">Horario 6</option>
-                            </select>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="inputNacionality">Centro de salud</label>
-                            <select type="text" class="form-control" id="inputNacionality" name="inputNacionality" placeholder="Nacionalidad" required>
-                                <option selected value="clinica1">Clínica uno</option>
-                                <option value="clinica2">Clínica dos</option>
-                                <option value="clinica3">Clínica tres</option>
-                                <option value="clinica4">Clínica cuatro</option>
-                                <option value="clinica5">Clínica seis</option>
-                                <option value="clinica6">Clínica siete</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="form-check">
-                            <input class="form-check-input" type="checkbox" id="gridCheck">
-                            <label class="form-check-label" for="gridCheck">Acepto los términos y condiciones</label>
-                        </div>
-                    </div>
-                    <button type="submit" id="btnTest" class="col-md-6 col-lg-4 main-container-form__btn">Reservar</button>
+                    <button type="submit" id="btn_dc_send" class="col-md-6 col-lg-4 main-container-form__btn">Reservar</button>
                 </form>
             </div>
 
@@ -383,7 +293,7 @@ if ($_SESSION['token'] == null) {
                                 placeholder="Repetir contraseña" required>
                         </div> -->
                     </div>
-                    
+
                     <button id="btn_form_register" type="button" value="Enviar" class="col-md-6 col-lg-4 main-container-form__btn">Guardar datos</button>
                 </form>
             </div>
@@ -416,28 +326,28 @@ if ($_SESSION['token'] == null) {
                     <h5 class="footer-container-div-row__h5">Ubicaciones</h5>
                     <div class="row">
                         <div class="col-md-6">
-                            <h6>Clínica Uno</h6>
-                            <p>Av. Lorem Ipsum 1234</p>
+                            <h6>Clínica Holandesa</h6>
+                            <p>Av. Kennedy 4865</p>
                         </div>
                         <div class="col-md-6">
-                            <h6>Clínica Dos</h6>
-                            <p>Av. Lorem Ipsum 1234</p>
+                            <h6>Clínica Las Margaritas</h6>
+                            <p>Av. Las Margaritas 18547</p>
                         </div>
                         <div class="col-md-6">
-                            <h6>Clínica Tres</h6>
-                            <p>Av. Lorem Ipsum 1234</p>
+                            <h6>Clínica Los Montes</h6>
+                            <p>Av. Diagonal Sur 3266</p>
                         </div>
                         <div class="col-md-6">
-                            <h6>Clínica Cuatro</h6>
-                            <p>Av. Lorem Ipsum 1234</p>
+                            <h6>Hospital Dra. Julieta</h6>
+                            <p>Av. Doctora Julieta 283</p>
                         </div>
                         <div class="col-md-6">
-                            <h6>Clínica Cinco</h6>
-                            <p>Av. Lorem Ipsum 1234</p>
+                            <h6>Hospital Interzonal</h6>
+                            <p>Av. Juan Justo 6701</p>
                         </div>
                         <div class="col-md-6">
-                            <h6>Clínica Seis</h6>
-                            <p>Av. Lorem Ipsum 1234</p>
+                            <h6>Hospital Metropolitano</h6>
+                            <p>Av. Alemania 50</p>
                         </div>
                     </div>
                 </div>

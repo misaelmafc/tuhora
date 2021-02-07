@@ -2,9 +2,7 @@ $(document).ready(function () {
 
     showContent('btn-login', 'div-login');
 
-    showContent('btn-reservation-availability', 'div-reservation-availability');
-
-    showContent('btn-reservation-doctor', 'div-reservation-doctor');
+    showContent('btn-main', 'div-main');
 
     function showContent(btnName, idName) {
         $(`#${btnName}`).click(function () {
