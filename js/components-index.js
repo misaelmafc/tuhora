@@ -1,7 +1,7 @@
 // template literals ``
 const ComponentHome = {
     render: function () {
-        return `<div id="div-main" class="container main-container-div">
+        return `<div style="display: block" id="div-main" class="container main-container-div">
                     <div class="row main-container-div-home">
                         <div class="col-md-6">
                             <img class="img-fluid" src="assets/img-01.png" alt="">
@@ -18,20 +18,12 @@ const ComponentHome = {
 
 const ComponentLogin = {
     render: function () {
-        return `<div id="div-login" class="col-sm-6 col-xl-4 container main-container-div">
+        return `<div style="display: block" class="col-sm-6 col-xl-4 container main-container-div">
                     <div class="row align-items-center justify-content-center main-container-div-initial">
 
-                        <div class="col-12 main-container-div-initial-title row">
-                            <a class="col-6 main-container-div-form__h5 main-container-div-initial-title__a"
-                                id="btn_sessionStart" href="javascript:void(0);">
-                                <h5>Iniciar sesión</h5>
-                            </a>
-                            <a class="col-6 main-container-div-form__h5 main-container-div-initial-title__a"
-                                id="btn_register" href="javascript:void(0);">
-                                <h5>Registrarse</h5>
-                            </a>
+                        <div class="col-12 main-container-div-initial-title row justify-content-center">
+                            <h5 class="main-container-div-initial-title__a">Iniciar sesión</h5>
                         </div>
-
 
                         <form id="formLogin" class="col-12 main-container-div-initial-form-login" action="user.html">
 
@@ -58,7 +50,22 @@ const ComponentLogin = {
 
                         </form>
 
-                        <form style="display: none;" id="form-save-user" class="col-12 main-container-div-initial-form-login">
+                    </div>
+                </div>
+                <script src="js/login.js"></script>`;
+    }
+};
+
+const ComponentSignUp = {
+    render: function () {
+        return `<div style="display: block" class="col-sm-6 col-xl-4 container main-container-div">
+                    <div class="row align-items-center justify-content-center main-container-div-initial">
+
+                        <div class="col-12 main-container-div-initial-title row justify-content-center">
+                            <h5 class="main-container-div-initial-title__a">Registrarse</h5>
+                        </div>
+
+                        <form id="form-save-user" class="col-12 main-container-div-initial-form-login">
 
                             <div class="form-row align-items-center justify-content-center">
 
@@ -98,7 +105,8 @@ const ComponentLogin = {
 
                         </form>
                     </div>
-                </div>`;
+                </div>
+                <script src="js/save-user.js"></script>`;
     }
 };
 
@@ -121,6 +129,11 @@ const routes = [
     {
         path: '/login',
         component: ComponentLogin
+
+    },
+    {
+        path: '/sign-up',
+        component: ComponentSignUp
 
     },
 ];
