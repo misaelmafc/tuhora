@@ -20,6 +20,7 @@ if ($_SESSION['token'] == null) {
     <script src="js/save-patient.js"></script>
     <script src="js/rg.js"></script>
     <script src="js/disponibilidad_clinica.js"></script>
+    <script src="js/Alert.js"></script>
 </head>
 
 <body>
@@ -114,7 +115,7 @@ if ($_SESSION['token'] == null) {
 
                     <h3 class="main-container-div-form__h3">Mis reservaciones</h3>
 
-                    <div class="container">
+                    <div id="div-reservation" class="container">
                         <div class="row">
                             <div class="col-4">
                                 <h6>Fecha y hora</h6>
@@ -123,35 +124,11 @@ if ($_SESSION['token'] == null) {
                                 <h6>Ubicación</h6>
                             </div>
                             <div class="col-4">
-                                <h6>Descargar comprobante</h6>
+                                <h6 style="text-align: center;" >Descargar comprobante</h6>
                             </div>
                         </div>
-
                         <hr>
 
-                        <div class="row">
-                            <div class="col-4">
-                                <p>04/06/2020 10:45</p>
-                            </div>
-                            <div class="col-4">
-                                <p>Clínica 2</p>
-                            </div>
-                            <div class="col-4">
-                                <p><a href=""><img style="width: 2em;" src="assets/file.png" alt=""></a></p>
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-4">
-                                <p>04/06/2020 10:45</p>
-                            </div>
-                            <div class="col-4">
-                                <p>Clínica 2</p>
-                            </div>
-                            <div class="col-4">
-                                <p><a href=""><img style="width: 2em;" src="assets/file.png" alt=""></a></p>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
@@ -210,23 +187,6 @@ if ($_SESSION['token'] == null) {
 
             <div id="div-us-register" class="container main-container-div">
 
-                <div id="alertaExito" class="alert alert-success alert-dismissible fade show  main-container-div__alert" role="alert">
-                    <span><strong>El registro se ha guardado correctamente.</strong></span><br>
-                    <span>Inicia sesión con tu usuario y contraseña
-                        guardada o con tu cuenta de Google</span>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div id="alertaError" class="alert alert-danger alert-dismissible fade show  main-container-div__alert" role="alert">
-                    <span><strong>¡Ups, ha ocurrido un problema al guardar el registro!</strong></span><br>
-                    <span> Intenta guardar nuevamente o
-                        probar en otro momento</span>
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-
                 <form id="form-register" class="main-container-div-form">
 
                     <h3 class="main-container-div-form__h3">Registro</h3>
@@ -282,16 +242,6 @@ if ($_SESSION['token'] == null) {
                             </select>
                         </div>
 
-                        <!--                         <div class="form-group col-md-6 col-lg-4">
-                            <label for="rg_input10">Contraseña</label>
-                            <input id="rg_input10" type="password" class="form-control" name="rg_input10"
-                                placeholder="Mínimo 8 caracteres" required>
-                        </div>
-                        <div class="form-group col-md-6 col-lg-4">
-                            <label for="rg_input11">Confirmar contraseña</label>
-                            <input id="rg_input11" type="password" class="form-control" name="rg_input11"
-                                placeholder="Repetir contraseña" required>
-                        </div> -->
                     </div>
 
                     <button id="btn_form_register" type="button" value="Enviar" class="col-md-6 col-lg-4 main-container-form__btn">Guardar datos</button>
@@ -395,7 +345,6 @@ if ($_SESSION['token'] == null) {
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
 

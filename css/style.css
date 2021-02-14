@@ -72,11 +72,13 @@ body {
       background-color: #673AB7; }
     body .main-container .main-container-div {
       margin-top: 2.5em;
-      display: none;
       background-color: #FFFFFF;
       border-radius: 1.5em;
       -webkit-box-shadow: -6px 7px 10px -4px rgba(0, 0, 0, 0.67);
       box-shadow: -6px 7px 10px -4px rgba(0, 0, 0, 0.67); }
+      body .main-container .main-container-div .main-container-div__title {
+        color: #673AB7;
+        margin: 1em; }
       body .main-container .main-container-div .main-container-div-home {
         margin: 2em; }
         body .main-container .main-container-div .main-container-div-home .main-container-div-home__title {

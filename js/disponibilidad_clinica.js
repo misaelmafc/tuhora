@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    
     const centro_salud = $('#centro_salud');
     const especialidad = $('#especialidad');
     const fecha_disponible = $('#fecha_disponible');
@@ -25,6 +26,7 @@ $(document).ready(function () {
     }
 
     function ajaxQuery(idSelect, status) {
+        let alert = new Alert();
         let data;
         let centro_salud_ = centro_salud.val();
         let especialidad_ = especialidad.val();
@@ -68,6 +70,7 @@ $(document).ready(function () {
                 }
                 break;
         }
+        
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -75,19 +78,18 @@ $(document).ready(function () {
             url: 'php/disponibilidad_clinica.php',
         }).done(function (response) {
             response.forEach(element => {
-                element.forEach(element => {
-                    idSelect.append(
-                        `<option value="${element}">
-                        ${element}
+                idSelect.append(
+                        `<option value="${element[status]}">
+                        ${element[status]}
                         </option>`);
-                });
             });
         }).fail(function () {
-            alert("No ha sido posible cargar los datos");
+            alert.createAlert('alert-danger', 'Error', 'No ha sido posible acceder a los datos, intente nuevamente');
         });
     }
 
     $('#form_dc').bind('submit', function () {
+        let alert = new Alert();
         let form = $('#form_dc').serializeArray();
         console.log(form);
         $.ajax({
@@ -96,11 +98,12 @@ $(document).ready(function () {
             url: 'php/save-dc.php',
             data: form,
         }).done(function () {
-            alert('Registro guardado correctamente');
+            document.getElementById("form_dc").reset();            
+            alert.createAlert('alert-success', 'Registro exitoso', 'Puede descargar su reserva en la secci贸n correspondiente');
         }).fail(function () {
-            alert('Error al guardar el registro');
+            document.getElementById("form_dc").reset();            
+            alert.createAlert('alert-danger', 'Error', 'No ha sido posible guardar la reserva, intente nuevamente');
         });
     });
-
 
 });

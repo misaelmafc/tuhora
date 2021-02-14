@@ -1,15 +1,4 @@
 $(document).ready(function () {
-
-    showContent('btn-login', 'div-login');
-
-    showContent('btn-main', 'div-main');
-
-    function showContent(btnName, idName) {
-        $(`#${btnName}`).click(function () {
-            $(".main-container-div").hide();
-            $(`#${idName}`).fadeIn("slow");
-        });
-    }
     
     $("#btn_sessionStart").css("color", "#673AB7");
 

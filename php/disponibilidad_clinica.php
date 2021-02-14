@@ -77,6 +77,12 @@ switch ($status) {
 
 $query = mysqli_query($link, $sql);
 
-print json_encode(mysqli_fetch_all($query));
+while($dat=mysqli_fetch_assoc($query)){
+    $arr[]=$dat;
+}
+
+echo json_encode($arr);
 
 mysqli_close(($link));
+
+?>
