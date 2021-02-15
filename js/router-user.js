@@ -22,6 +22,9 @@ function router() {
          const path = parseLocation();
          const { component = ComponenteError } = findComponent(path, routes) || {};
          $('#main-user').html(component.render());
+
+
+
       } else {
          window.location.replace('php/logout.php');
       }

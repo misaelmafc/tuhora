@@ -128,7 +128,7 @@ const ComponentUser = {
 const ComponentRegister = {
     render: function () {
         return `<div id="div-us-register" class="container main-container-div">
-                    <form id="form-register" class="main-container-div-form">
+                    <form id="form-register" class="main-container-div-form" method="post">
                         <h3 class="main-container-div-form__h3">Registro</h3>
                         <div class="form-row">
                             <div class="form-group col-md-6 col-lg-4">
@@ -181,7 +181,7 @@ const ComponentRegister = {
                                 </select>
                             </div>
                         </div>
-                        <button id="btn_form_register" type="button" value="Enviar" class="col-md-6 col-lg-4 main-container-form__btn">Guardar datos</button>
+                        <button id="btn_form_register" type="submit" class="col-md-6 col-lg-4 main-container-form__btn">Guardar datos</button>
                     </form>
                 </div>
                 <div class="modal fade" id="accept-terms" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">

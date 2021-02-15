@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    
+
     const centro_salud = $('#centro_salud');
     const especialidad = $('#especialidad');
     const fecha_disponible = $('#fecha_disponible');
@@ -70,7 +70,7 @@ $(document).ready(function () {
                 }
                 break;
         }
-        
+
         $.ajax({
             type: 'POST',
             dataType: 'json',
@@ -79,7 +79,7 @@ $(document).ready(function () {
         }).done(function (response) {
             response.forEach(element => {
                 idSelect.append(
-                        `<option value="${element[status]}">
+                    `<option value="${element[status]}">
                         ${element[status]}
                         </option>`);
             });
@@ -88,20 +88,21 @@ $(document).ready(function () {
         });
     }
 
-    $('#form_dc').bind('submit', function () {
+    $('#form_dc').submit(function (event) {
+        const form = document.getElementById("form_dc")
+        event.preventDefault();
         let alert = new Alert();
-        let form = $('#form_dc').serializeArray();
-        console.log(form);
+        let formulario = $(form).serializeArray();
         $.ajax({
             type: 'POST',
             dataType: 'json',
             url: 'php/save-dc.php',
-            data: form,
+            data: formulario,
         }).done(function () {
-            document.getElementById("form_dc").reset();            
-            alert.createAlert('alert-success', 'Registro exitoso', 'Puede descargar su reserva en la secci贸n correspondiente');
+            form.reset();
+            alert.createAlert('alert-success', 'Registro exitoso', 'Puede descargar su reserva en la sección correspondiente');
         }).fail(function () {
-            document.getElementById("form_dc").reset();            
+            form.reset();
             alert.createAlert('alert-danger', 'Error', 'No ha sido posible guardar la reserva, intente nuevamente');
         });
     });
