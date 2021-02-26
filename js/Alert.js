@@ -13,7 +13,10 @@ class Alert {
                         </div>`);
 
         $('#alert').fadeIn();
-        setTimeout(function () { $('#alert').fadeOut(); }, 7500);
+        setTimeout(function () {
+            $('#alert').fadeOut();
+            $('#alert').remove();
+        }, 7500);
     }
 
 }

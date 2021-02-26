@@ -1,5 +1,7 @@
 body {
   overflow-x: hidden; }
+  body button:focus {
+    outline: none; }
   body .alert {
     z-index: 5000;
     display: none;
@@ -92,6 +94,9 @@ body {
             color: #333232; }
         body .main-container .main-container-div .main-container-div-initial .main-container-div-initial-form-login {
           padding: 1em; }
+          body .main-container .main-container-div .main-container-div-initial .main-container-div-initial-form-login .main-container-div-initial-form-login__a {
+            margin-top: 1.25em;
+            margin-bottom: 0.5em; }
       body .main-container .main-container-div .main-container-div-form {
         padding: 2em; }
       body .main-container .main-container-div .main-container-div-form__h5 {

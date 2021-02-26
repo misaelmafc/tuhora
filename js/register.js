@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    // Esta sección se encarga de crear un listener de cada input para guardarlo como sessionStorage
+
     let inputs = [];
 
     // Permite rellenar el arreglo con el id de cada elemento del formulario

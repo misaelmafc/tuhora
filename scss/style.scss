@@ -10,6 +10,10 @@ $white              : #FFFFFF;
 body{
     overflow-x: hidden;
 
+    button:focus{
+        outline: none;
+    }
+
     .alert{
         z-index: 5000; 
         display: none; 
@@ -149,7 +153,12 @@ body{
                 }
     
                 .main-container-div-initial-form-login{
-                    padding: 1em;  
+                    padding: 1em;
+                    
+                    .main-container-div-initial-form-login__a{
+                        margin-top: 1.25em;
+                        margin-bottom: 0.5em;
+                    }
                 }
         
             }

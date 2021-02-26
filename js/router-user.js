@@ -1,4 +1,3 @@
-
 const parseLocation = function () {
    return location.hash.slice(1).toLowerCase() || "/";
 }
@@ -22,9 +21,6 @@ function router() {
          const path = parseLocation();
          const { component = ComponenteError } = findComponent(path, routes) || {};
          $('#main-user').html(component.render());
-
-
-
       } else {
          window.location.replace('php/logout.php');
       }

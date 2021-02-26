@@ -17,7 +17,7 @@ if ($_SESSION['token'] == null) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <script src="js/Rg.js"></script>
     <script src="js/router-user.js"></script>
-    <script src="js/components-user.js"></script>    
+    <script src="js/components-user.js"></script>
     <script src="js/main.js"></script>
     <script src="js/Alert.js"></script>
 </head>
@@ -35,20 +35,26 @@ if ($_SESSION['token'] == null) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item  p-2">
-                        <a class="nav-link body__button-a" id="btn-us-reservation-availability" href="#/">Disponibilidad
-                            clínica</a>
-                    </li>
-                    <li class="nav-item  p-2">
-                        <a class="nav-link body__button-a" id="btn-us-my-reservations" href="#/my-reservations">Mis reservas</a>
-                    </li>
-                    <li class="nav-item  p-2">
-                        <a class="nav-link body__button-a" id="btn-us-user" href="#/user">
-                            <img style="width: 1.75em;" src="assets/user.png" alt="" data-toggle="tooltip" data-placement="bottom" title="Mi perfil">
+                        <a class="nav-link body__button-a" id="btn-us-reservation-availability" href="#/">
+                            <img style="width: 1.5em;" src="assets/agenda.png" alt="">
+                            <span>Reservar</span>
                         </a>
                     </li>
                     <li class="nav-item  p-2">
+                        <a class="nav-link body__button-a" id="btn-us-my-reservations" href="#/my-reservations">
+                            <img style="width: 1.75em;" src="assets/booking.png" alt="">
+                            <span>Mis reservas</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  p-2">
+                        <a class="nav-link body__button-a" id="btn-us-user" href="#/user">
+                            <img style="width: 1.5em;" src="assets/user.png" alt="">
+                            <span>Mi perfil</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  p-2" data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión">
                         <a class="nav-link body__button-a" id="" href="php/logout.php">
-                            <img style="width: 1.75em;" src="assets/logout.png" alt="" data-toggle="tooltip" data-placement="bottom" title="Cerrar sesión">
+                            <img style="width: 1.5em;" src="assets/logout.png" alt="">
                         </a>
                     </li>
                 </ul>

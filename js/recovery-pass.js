@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
-    $('#form-save-user').submit(function (event) {
-        const form = document.getElementById("form-save-user");
+    $('#form-recovery-pass').submit(function (event) {
+        const form = document.getElementById("form-recovery-pass");
         if (form.checkValidity() === true) {
             event.preventDefault();
             let alert = new Alert();
@@ -9,12 +9,12 @@ $(document).ready(function () {
             $.ajax({
                 type: 'POST',
                 dataType: 'json',
-                url: 'php/save-user.php',
+                url: 'php/recovery-pass.php',
                 data: formulario,
             }).done(function (response) {
                 if (response == 1) {
                     form.reset();
-                    alert.createAlert('alert-success', 'Registro exitoso', 'Ingrese con su email y contraseña');
+                    alert.createAlert('alert-success', 'Actualización exitosa', 'Ingrese con su email y nueva contraseña');
                     form.setAttribute('novalidate', true);
                     form.classList.remove('was-validated');
                     history.pushState(null, "", "user.php#/login");
@@ -22,10 +22,12 @@ $(document).ready(function () {
                     const { component = ComponenteError } = findComponent(path, routes) || {};
                     $('#main-index').html(component.render());
                 } else {
-                    alert.createAlert('alert-danger', 'Registro fallido', 'Intente nuevamente o contacte al administrador');
+                    form.reset();
+                    alert.createAlert('alert-danger', 'Actualización fallida', 'Intente nuevamente o contacte al administrador');
                 }
             }).fail(function () {
-                alert.createAlert('alert-danger', 'Registro fallido', 'Intente nuevamente o contacte al administrador');
+                form.reset();
+                alert.createAlert('alert-danger', 'Actualización fallida', 'Intente nuevamente o contacte al administrador');
             });
         } else {
             event.preventDefault();
@@ -34,15 +36,15 @@ $(document).ready(function () {
         }
     });
 
-    $('#usr_password').keyup(function () {
-        const input1 = document.getElementById("usr_password");
-        const input2 = document.getElementById("usr_password2");
+    $('#rcp_password').keyup(function () {
+        const input1 = document.getElementById("rcp_password");
+        const input2 = document.getElementById("rcp_password2");
         passwordEquals(input1, input2);
     });
 
-    $('#usr_password2').keyup(function () {
-        const input1 = document.getElementById("usr_password2");
-        const input2 = document.getElementById("usr_password");
+    $('#rcp_password2').keyup(function () {
+        const input1 = document.getElementById("rcp_password2");
+        const input2 = document.getElementById("rcp_password");
         passwordEquals(input1, input2);
     });
 
