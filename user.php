@@ -35,7 +35,13 @@ if ($_SESSION['token'] == null) {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="nav navbar-nav ml-auto">
                     <li class="nav-item  p-2">
-                        <a class="nav-link body__button-a" id="btn-us-reservation-availability" href="#/">
+                        <a class="nav-link body__button-a" href="#/">
+                            <img style="width: 1.5em;" src="assets/home.png" alt="">
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item  p-2">
+                        <a class="nav-link body__button-a" id="btn-us-reservation-availability" href="#/reserve">
                             <img style="width: 1.5em;" src="assets/agenda.png" alt="">
                             <span>Reservar</span>
                         </a>

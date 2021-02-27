@@ -14,6 +14,11 @@ body{
         outline: none;
     }
 
+    .btn_modal{
+        background-color: $primary-color;
+        color: $white;
+    }
+
     .alert{
         z-index: 5000; 
         display: none; 
@@ -165,7 +170,25 @@ body{
     
             .main-container-div-form{
                 padding: 2em;
+
+                .main-container-div-form__container{
+                    margin-bottom: 2em;
+                }
     
+                .main-container-div-form__a{
+                    text-decoration: none;
+                    color: $primary-text;
+                }
+
+                .main-container-div-form__btn{
+                    background-color: $primary-color;
+                    color: $white;
+                    outline: none;
+                }
+
+                .main-container-div-form__card{
+                    margin-bottom: 1.5em;
+                }
             }
 
             .main-container-div-form__h5{

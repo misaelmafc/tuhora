@@ -1,5 +1,233 @@
-// template literals ``
+
 const ComponentHome = {
+    render: function () {
+        return `<div class="container main-container-div">
+                    <div class="main-container-div-form">
+                        <h3 class="main-container-div-form__h3">Próximos turnos</h3>
+                        <div class="row">
+                            <div class="col-md-4 main-container-div-form__container">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item list-group-item-action list-group-item-dark"><a
+                                            class="main-container-div-form__a stretched-link" href="#/">Clínica Holandesa</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/clinica-los-montes">Clínica Los
+                                            Montes</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-interzonal">Hospital
+                                            Interzonal</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/clinica-las-margaritas">Clínica
+                                            Las Margaritas</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-dra-julieta">Hospital
+                                            Dra. Julieta</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-metropolitano">Hospital
+                                            Metropolitano</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                <div id="div-card" class="row">                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <script src="js/select-clinica.js"></script>`;
+    }
+}
+
+const ComponentLosMontes = {
+    render: function () {
+        return `<div class="container main-container-div">
+                    <div class="main-container-div-form">
+                        <h3 class="main-container-div-form__h3">Próximos turnos</h3>
+                        <div class="row">
+                            <div class="col-md-4 main-container-div-form__container">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/">Clínica Holandesa</a></li>
+                                    <li class="list-group-item list-group-item-action list-group-item-dark"><a
+                                            class="main-container-div-form__a stretched-link" href="#/clinica-los-montes">Clínica Los
+                                            Montes</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-interzonal">Hospital
+                                            Interzonal</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/clinica-las-margaritas">Clínica
+                                            Las Margaritas</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-dra-julieta">Hospital
+                                            Dra. Julieta</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-metropolitano">Hospital
+                                            Metropolitano</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                <div id="div-card" class="row">                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <script src="js/select-clinica.js"></script>`;
+    }
+}
+
+const ComponentInterzonal = {
+    render: function () {
+        return `<div class="container main-container-div">
+                    <div class="main-container-div-form">
+                        <h3 class="main-container-div-form__h3">Próximos turnos</h3>
+                        <div class="row">
+                            <div class="col-md-4 main-container-div-form__container">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/">Clínica Holandesa</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/clinica-los-montes">Clínica Los
+                                            Montes</a></li>
+                                    <li class="list-group-item list-group-item-action list-group-item-dark"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-interzonal">Hospital
+                                            Interzonal</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/clinica-las-margaritas">Clínica
+                                            Las Margaritas</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-dra-julieta">Hospital
+                                            Dra. Julieta</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-metropolitano">Hospital
+                                            Metropolitano</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                <div id="div-card" class="row">                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <script src="js/select-clinica.js"></script>`;
+    }
+}
+
+const ComponentLasMargaritas = {
+    render: function () {
+        return `<div class="container main-container-div">
+                    <div class="main-container-div-form">
+                        <h3 class="main-container-div-form__h3">Próximos turnos</h3>
+                        <div class="row">
+                            <div class="col-md-4 main-container-div-form__container">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/">Clínica Holandesa</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/clinica-los-montes">Clínica Los
+                                            Montes</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-interzonal">Hospital
+                                            Interzonal</a></li>
+                                    <li class="list-group-item list-group-item-action list-group-item-dark"><a
+                                            class="main-container-div-form__a stretched-link" href="#/clinica-las-margaritas">Clínica
+                                            Las Margaritas</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-dra-julieta">Hospital
+                                            Dra. Julieta</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-metropolitano">Hospital
+                                            Metropolitano</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                <div id="div-card" class="row">                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <script src="js/select-clinica.js"></script>`;
+    }
+}
+
+const ComponentJulieta = {
+    render: function () {
+        return `<div class="container main-container-div">
+                    <div class="main-container-div-form">
+                        <h3 class="main-container-div-form__h3">Próximos turnos</h3>
+                        <div class="row">
+                            <div class="col-md-4 main-container-div-form__container">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/">Clínica Holandesa</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/clinica-los-montes">Clínica Los
+                                            Montes</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-interzonal">Hospital
+                                            Interzonal</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/clinica-las-margaritas">Clínica
+                                            Las Margaritas</a></li>
+                                    <li class="list-group-item list-group-item-action list-group-item-dark"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-dra-julieta">Hospital
+                                            Dra. Julieta</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-metropolitano">Hospital
+                                            Metropolitano</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                <div id="div-card" class="row">                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <script src="js/select-clinica.js"></script>`;
+    }
+}
+
+const ComponentMetropolitano = {
+    render: function () {
+        return `<div class="container main-container-div">
+                    <div class="main-container-div-form">
+                        <h3 class="main-container-div-form__h3">Próximos turnos</h3>
+                        <div class="row">
+                            <div class="col-md-4 main-container-div-form__container">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/">Clínica Holandesa</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/clinica-los-montes">Clínica Los
+                                            Montes</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-interzonal">Hospital
+                                            Interzonal</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/clinica-las-margaritas">Clínica
+                                            Las Margaritas</a></li>
+                                    <li class="list-group-item list-group-item-action"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-dra-julieta">Hospital
+                                            Dra. Julieta</a></li>
+                                    <li class="list-group-item list-group-item-action list-group-item-dark"><a
+                                            class="main-container-div-form__a stretched-link" href="#/hospital-metropolitano">Hospital
+                                            Metropolitano</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-8">
+                                <div id="div-card" class="row">                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>                
+                <script src="js/select-clinica.js"></script>`;
+    }
+}
+
+const ComponentReserve = {
     render: function () {
         return `<div id="div-us-reservation-availability" class="container main-container-div">
                     <form id="form_dc" class="main-container-div-form needs-validation" novalidate method="post">
@@ -80,7 +308,8 @@ const ComponentHome = {
                                     <div class="form-group">
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" id="check_dc" required>
-                                            <label class="form-check-label" for="gridCheck">Acepto los términos y condiciones</label>
+                                            <label class="form-check-label" for="gridCheck">Acepto los <a id="term_reserve" href="">términos y
+                                            condiciones</a></label>
                                             <div class="invalid-feedback">
                                                 Debe estar de acuerdo para reservar
                                             </div>
@@ -135,7 +364,7 @@ const ComponentHome = {
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                <button id="btn_modal-validation-reservation" type="button" class="btn btn-primary">Reservar</button>
+                                <button id="btn_modal-validation-reservation" type="button" class="btn btn_modal">Reservar</button>
                             </div>
                         </div>
                     </div>
@@ -150,18 +379,6 @@ const ComponentMyReservations = {
                     <div class="main-container-div-form">
                         <h3 class="main-container-div-form__h3">Mis reservas</h3>
                         <div id="div-reservation" class="container">
-                            <div class="row">
-                                <div class="col-4">
-                                    <h6>Fecha y hora</h6>
-                                </div>
-                                <div class="col-4">
-                                    <h6>Ubicación</h6>
-                                </div>
-                                <div class="col-4">
-                                    <h6 style="text-align: center;" >Descargar comprobante</h6>
-                                </div>
-                            </div>
-                            <hr>
                         </div>
                     </div>
                 </div>
@@ -245,6 +462,9 @@ const ComponentRegister = {
                                 <div class="invalid-feedback">
                                     Campo obligatorio
                                 </div>
+                                <div class="valid-feedback">
+                                    Válido
+                                </div>
                             </div>
                             <div class="form-group col-md-6 col-lg-4">
                                 <label for="rg_input2">Nombre</label>
@@ -252,6 +472,9 @@ const ComponentRegister = {
                                 <div class="invalid-feedback">
                                     Campo obligatorio
                                 </div>
+                                <div class="valid-feedback">
+                                    Válido
+                                </div>                                
                             </div>
                             <div class="form-group col-md-6 col-lg-4">
                                 <label for="rg_input3">Apellidos</label>
@@ -259,6 +482,9 @@ const ComponentRegister = {
                                 <div class="invalid-feedback">
                                     Campo obligatorio
                                 </div>
+                                <div class="valid-feedback">
+                                    Válido
+                                </div>                                
                             </div>
 
                             <div class="form-group col-md-6 col-lg-4">
@@ -267,6 +493,9 @@ const ComponentRegister = {
                                 <div class="invalid-feedback">
                                     Campo obligatorio
                                 </div>
+                                <div class="valid-feedback">
+                                    Válido
+                                </div>                                
                             </div>
                             <div class="form-group col-md-6 col-lg-4">
                                 <label for="rg_input5">Sexo</label>
@@ -278,6 +507,9 @@ const ComponentRegister = {
                                 <div class="invalid-feedback">
                                     Debe seleccionar una opción
                                 </div>
+                                <div class="valid-feedback">
+                                    Opción seleccionada
+                                </div>                                
                             </div>
                             <div class="form-group col-md-6 col-lg-4">
                                 <label for="rg_input6">Nacionalidad</label>
@@ -292,6 +524,9 @@ const ComponentRegister = {
                                 <div class="invalid-feedback">
                                     Debe seleccionar una opción
                                 </div>
+                                <div class="valid-feedback">
+                                    Opción seleccionada
+                                </div>                                 
                             </div>
                             <div class="form-group col-md-6 col-lg-4">
                                 <label for="rg_input7">Teléfono</label>
@@ -299,6 +534,9 @@ const ComponentRegister = {
                                 <div class="invalid-feedback">
                                     Debe ingresar los 8 dígitos de su número móvil
                                 </div>
+                                <div class="valid-feedback">
+                                    Válido
+                                </div>                                 
                             </div>
                             <div class="form-group col-md-6 col-lg-4">
                                 <label for="rg_input8">Previsión</label>
@@ -311,6 +549,9 @@ const ComponentRegister = {
                                 <div class="invalid-feedback">
                                     Debe seleccionar una opción
                                 </div>
+                                <div class="valid-feedback">
+                                    Opción seleccionada
+                                </div>                                 
                             </div>
                         </div>
                         <button id="btn_form_register" type="submit" class="col-md-6 col-lg-4 main-container-form__btn">Guardar datos</button>
@@ -352,6 +593,30 @@ const routes = [
     {
         path: '/',
         component: ComponentHome
+    },
+    {
+        path: '/clinica-los-montes',
+        component: ComponentLosMontes
+    },
+    {
+        path: '/hospital-interzonal',
+        component: ComponentInterzonal
+    },
+    {
+        path: '/clinica-las-margaritas',
+        component: ComponentLasMargaritas
+    },
+    {
+        path: '/hospital-dra-julieta',
+        component: ComponentJulieta
+    },
+    {
+        path: '/hospital-metropolitano',
+        component: ComponentMetropolitano
+    },
+    {
+        path: '/reserve',
+        component: ComponentReserve
     },
     {
         path: '/my-reservations',

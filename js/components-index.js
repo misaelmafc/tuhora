@@ -36,6 +36,9 @@ const ComponentLogin = {
                                     <div class="invalid-feedback">
                                         Campo obligatorio
                                     </div>
+                                    <div class="valid-feedback">
+                                        Válido
+                                    </div> 
                                 </div>
 
                                 <div class="w-100 d-none d-lg-block"></div>
@@ -46,6 +49,9 @@ const ComponentLogin = {
                                     <div class="invalid-feedback">
                                         Campo obligatorio
                                     </div>
+                                    <div class="valid-feedback">
+                                        Válido
+                                    </div> 
                                 </div>
 
                                 <div class="w-100 d-none d-lg-block"></div>
@@ -77,6 +83,9 @@ const ComponentSignUp = {
                                 <div class="invalid-feedback">
                                     Campo requerido
                                 </div>
+                                <div class="valid-feedback">
+                                    Válido
+                                </div> 
                             </div>
                             <div class="form-group col-md-6 col-lg-4">
                                 <label for="usr_password">Contraseña</label>
@@ -85,6 +94,9 @@ const ComponentSignUp = {
                                 <div class="invalid-feedback">
                                     Las contraseñas deben coincidir
                                 </div>
+                                <div class="valid-feedback">
+                                    Válido
+                                </div>                                 
                             </div>
                             <div class="form-group col-md-6 col-lg-4">
                                 <label for="usr_password2">Confirmar contraseña</label>
@@ -93,6 +105,9 @@ const ComponentSignUp = {
                                 <div class="invalid-feedback">
                                     Las contraseñas deben coincidir
                                 </div>
+                                <div class="valid-feedback">
+                                    Válido
+                                </div>                                 
                             </div>
                             <div class="form-group col-md-6 col-lg-4">
                                 <label for="usr_pregunta">Pregunta recuperación contraseña</label>
@@ -109,6 +124,9 @@ const ComponentSignUp = {
                                 <div class="invalid-feedback">
                                     Debe seleccionar una opción
                                 </div>
+                                <div class="valid-feedback">
+                                    Opción seleccionada
+                                </div>                                 
                             </div>
                             <div class="form-group col-md-6 col-lg-4">
                                 <label for="usr_respuesta">Respuesta</label>
@@ -117,14 +135,23 @@ const ComponentSignUp = {
                                 <div class="invalid-feedback">
                                     Campo requerido
                                 </div>
+                                <div class="valid-feedback">
+                                    Válido
+                                </div>                                 
                              </div>
                         </div>
                         <div class="form-group">
                                 <div class=" form-check">
                                     <input class="form-check-input" type="checkbox" id="check-one" required>
-                                    <label class="form-check-label" for="check-one">Acepto los <a href="">términos y
-                                            condiciones</a></label>
-                                </div>
+                                    <label class="form-check-label" for="check-one">Acepto los <a id="term_register" href="">términos y
+                                        condiciones</a></label>
+                                    <div class="invalid-feedback">
+                                        Debe aceptar para continuar
+                                    </div>
+                                    <div class="valid-feedback">
+                                        Usted ha aceptado
+                                    </div>    
+                                </div>                            
                             </div>
                         <button id="btn_form_save_user" type="submit" class="col-md-6 col-lg-4 main-container-form__btn">
                             Registrarse</button>

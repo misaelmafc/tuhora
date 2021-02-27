@@ -8,20 +8,34 @@ $(document).ready(function () {
 
         $('#div-reservation').empty();
         if (response != null) {
+            $('#div-reservation').append(`
+                <div class="row">
+                    <div class="col-4">
+                        <h6>Fecha y hora</h6>
+                    </div>
+                    <div class="col-4">
+                        <h6>Ubicación</h6>
+                    </div>
+                    <div class="col-4">
+                        <h6 style="text-align: center;" >Descargar comprobante</h6>
+                    </div>
+                </div>
+                <hr>
+            `);
             response.forEach(e => {
                 let i = response.indexOf(e) + 1;
                 $('#div-reservation').append(
                     `<div class="row">
-                <div class="col-4">
-                    <p>${e.fecha_disponible} ${e.horario_disponible}</p>
-                </div>
-                <div class="col-4">
-                    <p>${e.centro_salud}</p>
-                </div>
-                <div class="col-4" style="text-align: center;">                     
-                    <a href="#" id="btn-download-${i}"><img style="width: 2em;" src="assets/file.png" alt=""></a>
-                </div>
-            </div>`
+                        <div class="col-4">
+                            <p>${e.fecha_disponible} ${e.horario_disponible}</p>
+                        </div>
+                        <div class="col-4">
+                            <p>${e.centro_salud}</p>
+                        </div>
+                        <div class="col-4" style="text-align: center;">                     
+                            <a href="#" id="btn-download-${i}"><img style="width: 2em;" src="assets/file.png" alt=""></a>
+                        </div>
+                    </div>`
                 );
                 $(`#btn-download-${i}`).click(function () {
                     openFile('php/file.php', e, true);

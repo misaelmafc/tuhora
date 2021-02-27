@@ -2,6 +2,9 @@ body {
   overflow-x: hidden; }
   body button:focus {
     outline: none; }
+  body .btn_modal {
+    background-color: #673AB7;
+    color: #FFFFFF; }
   body .alert {
     z-index: 5000;
     display: none;
@@ -99,6 +102,17 @@ body {
             margin-bottom: 0.5em; }
       body .main-container .main-container-div .main-container-div-form {
         padding: 2em; }
+        body .main-container .main-container-div .main-container-div-form .main-container-div-form__container {
+          margin-bottom: 2em; }
+        body .main-container .main-container-div .main-container-div-form .main-container-div-form__a {
+          text-decoration: none;
+          color: #333232; }
+        body .main-container .main-container-div .main-container-div-form .main-container-div-form__btn {
+          background-color: #673AB7;
+          color: #FFFFFF;
+          outline: none; }
+        body .main-container .main-container-div .main-container-div-form .main-container-div-form__card {
+          margin-bottom: 1.5em; }
       body .main-container .main-container-div .main-container-div-form__h5 {
         margin-bottom: 1em;
         text-align: center;
